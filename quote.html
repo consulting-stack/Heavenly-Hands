@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Request a Quote | Heavenly Hands Custom Designs</title>
+
+  <meta
+    name="description"
+    content="Request a custom quote from Heavenly Hands Custom Designs for wraps, food truck builds, mobile business builds, interior layouts, fleet branding, and custom commercial vehicle design."
+  />
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html" class="logo">Heavenly Hands Custom Designs</a>
+
+      <button class="menu-toggle">☰</button>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="quote.html" class="active">Request a Quote</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero-dark">
+    <div class="container text-center">
+      <div class="hero-badge">Request a Quote</div>
+      <h1>Tell Us About Your Project</h1>
+      <p>
+        Complete the questionnaire below so we can better understand your vehicle,
+        your business, and the type of custom design solution you need.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container contact-layout">
+
+      <div class="form-card">
+        <h2>Quote Questionnaire</h2>
+        <p>
+          The more detail you provide, the easier it will be for us to assess your project
+          and prepare a more accurate quote.
+        </p>
+
+        <form action="#" method="POST">
+
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+
+          <label for="business">Business Name</label>
+          <input type="text" id="business" name="business" placeholder="Enter your business name" />
+
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email address" required />
+
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" />
+
+          <label for="location">City & State</label>
+          <input type="text" id="location" name="location" placeholder="Enter your city and state" />
+
+          <label for="vehicleType">Type of Vehicle</label>
+          <input type="text" id="vehicleType" name="vehicleType" placeholder="Example: cargo van, box truck, food truck, trailer" required />
+
+          <label for="vehicleCount">Number of Vehicles</label>
+          <select id="vehicleCount" name="vehicleCount" required>
+            <option value="">Select one</option>
+            <option>1</option>
+            <option>2-3</option>
+            <option>4-10</option>
+            <option>11+</option>
+          </select>
+
+          <label for="service">Primary Service Needed</label>
+          <select id="service" name="service" required>
+            <option value="">Select a service</option>
+            <option>Wraps & Graphics</option>
+            <option>Food Truck Design & Builds</option>
+            <option>Mobile Business Builds</option>
+            <option>Interior Layout Design</option>
+            <option>Fleet Branding</option>
+            <option>Custom Design Concepts</option>
+          </select>
+
+          <label for="projectStage">Project Stage</label>
+          <select id="projectStage" name="projectStage">
+            <option value="">Select one</option>
+            <option>Just exploring ideas</option>
+            <option>Ready for design</option>
+            <option>Need pricing soon</option>
+            <option>Ready to start immediately</option>
+          </select>
+
+          <label for="timeline">Desired Timeline</label>
+          <select id="timeline" name="timeline">
+            <option value="">Select one</option>
+            <option>As soon as possible</option>
+            <option>Within 30 days</option>
+            <option>Within 60-90 days</option>
+            <option>Just planning for now</option>
+          </select>
+
+          <label for="budget">Estimated Budget Range</label>
+          <select id="budget" name="budget">
+            <option value="">Select one</option>
+            <option>Under $2,500</option>
+            <option>$2,500 - $5,000</option>
+            <option>$5,000 - $10,000</option>
+            <option>$10,000+</option>
+            <option>Need guidance</option>
+          </select>
+
+          <label for="details">Project Details</label>
+          <textarea
+            id="details"
+            name="details"
+            rows="7"
+            placeholder="Describe what you want done, what kind of look you want, and any important details about your vehicle or business"
+            required
+          ></textarea>
+
+          <label for="goals">What do you want this project to accomplish?</label>
+          <textarea
+            id="goals"
+            name="goals"
+            rows="5"
+            placeholder="Example: attract more customers, improve branding, launch a food truck, upgrade fleet image"
+          ></textarea>
+
+          <button type="submit">Submit Quote Request</button>
+        </form>
+      </div>
+
+      <div class="contact-card">
+        <h2>Why This Questionnaire Matters</h2>
+        <p>
+          This form helps us understand whether you need a simple branding update,
+          a more involved build concept, or a larger-scale commercial vehicle solution.
+        </p>
+
+        <ul class="benefits-list">
+          <li>Helps us assess the scope of your project</li>
+          <li>Improves quote accuracy</li>
+          <li>Speeds up the follow-up process</li>
+          <li>Filters design, function, and budget expectations early</li>
+        </ul>
+
+        <hr>
+
+        <h3>Best For</h3>
+        <ul class="benefits-list">
+          <li>Business owners ready to price a real project</li>
+          <li>Food truck and mobile business concepts</li>
+          <li>Commercial vans and truck branding</li>
+          <li>Fleet and multi-vehicle opportunities</li>
+        </ul>
+
+        <hr>
+
+        <h3>What Happens Next</h3>
+        <p>
+          Once submitted, we can review your request, evaluate the likely scope,
+          and follow up to discuss pricing, next steps, or additional details needed for a quote.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="feature-strip">
+        <h2>Custom Vehicle Design Since 1992</h2>
+        <p>
+          Heavenly Hands Custom Designs has spent decades helping businesses create stronger,
+          more visible, and more functional vehicle-based brand experiences.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Want to See the Style of Work First?</h2>
+        <p>
+          Explore our portfolio to see how we approach branding, design, and custom vehicle transformation.
+        </p>
+        <a href="portfolio.html" class="btn">View Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <h3>Heavenly Hands Custom Designs</h3>
+      <p>Since 1992</p>
+      <p>Phone: 000.000.0000</p>
+      <p>Email: info@heavenlyhandscustomdesigns.com</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
