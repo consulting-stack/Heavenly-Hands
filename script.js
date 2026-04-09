@@ -1,12 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
   setupMobileMenu();
   setupActiveNav();
-  setupForm();
+  setupForms();
 });
 
-/* =========================
-   MOBILE MENU
-========================= */
+/* MOBILE MENU */
 function setupMobileMenu() {
   const toggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector(".nav-links");
@@ -18,59 +16,57 @@ function setupMobileMenu() {
   });
 }
 
-/* =========================
-   ACTIVE NAV LINK
-========================= */
+/* ACTIVE NAV */
 function setupActiveNav() {
   const current = window.location.pathname.split("/").pop() || "index.html";
   const links = document.querySelectorAll(".nav-links a");
 
-  links.forEach(link => {
+  links.forEach((link) => {
     if (link.getAttribute("href") === current) {
       link.classList.add("active");
     }
   });
 }
 
-/* =========================
-   CONTACT FORM
-========================= */
-function setupForm() {
-  const form = document.querySelector("form");
-  if (!form) return;
+/* FORMS */
+function setupForms() {
+  const forms = document.querySelectorAll("form");
+  if (!forms.length) return;
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+  forms.forEach((form) => {
+    form.addEventListener("submit", function (e) {
+      const name = form.querySelector("#name");
+      const email = form.querySelector("#email");
+      const message =
+        form.querySelector("#message") ||
+        form.querySelector("#details");
 
-    const name = document.getElementById("name");
-    const email = document.getElementById("email");
-    const message = document.getElementById("message");
+      if (name && !name.value.trim()) {
+        e.preventDefault();
+        alert("Please enter your name.");
+        return;
+      }
 
-    if (!name.value.trim()) {
-      alert("Please enter your name");
-      return;
-    }
+      if (email && !validateEmail(email.value.trim())) {
+        e.preventDefault();
+        alert("Please enter a valid email address.");
+        return;
+      }
 
-    if (!validateEmail(email.value)) {
-      alert("Please enter a valid email");
-      return;
-    }
+      if (message && message.value.trim().length < 10) {
+        e.preventDefault();
+        alert("Please enter more project details.");
+        return;
+      }
 
-    if (message.value.trim().length < 10) {
-      alert("Please enter more details about your project");
-      return;
-    }
-
-    // Success (temporary since no backend)
-    alert("Your request has been received. We will contact you soon.");
-
-    form.reset();
+      /* IMPORTANT:
+         Do NOT prevent default here.
+         If validation passes, the form submits normally to Formspree.
+      */
+    });
   });
 }
 
-/* =========================
-   EMAIL VALIDATION
-========================= */
 function validateEmail(email) {
   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return re.test(email);
