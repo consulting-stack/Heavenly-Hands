@@ -536,3 +536,33 @@ button[type="submit"]:hover {
     grid-template-columns: 1fr;
   }
 }
+/* ===== Font Upgrade Patch ===== */
+
+body {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+.logo,
+.btn,
+.nav-links a {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.02em;
+}
+
+p,
+label,
+input,
+select,
+textarea,
+li {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
