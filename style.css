@@ -236,3 +236,198 @@ section {
     display: none;
   }
 }
+/* ===== Heavenly Hands CSS Patch ===== */
+
+/* Section headings */
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  color: var(--black);
+}
+
+.section-subtitle {
+  max-width: 800px;
+  margin: 0 auto 30px;
+  color: #666;
+}
+
+/* Reusable grids */
+.grid {
+  display: grid;
+  gap: 25px;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* About layouts */
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+/* Make feature strip text read correctly on dark background */
+.feature-strip h2,
+.feature-strip p {
+  color: var(--white);
+}
+
+/* Button polish */
+.btn:hover {
+  background: var(--purple);
+  color: var(--white);
+  transition: 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--white);
+  color: var(--black);
+  transition: 0.3s ease;
+}
+
+/* Process cards */
+.process-grid {
+  margin-top: 30px;
+}
+
+.process-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.process-card::top-border {
+  content: "";
+}
+
+.process-card {
+  border-top: 4px solid var(--purple);
+}
+
+/* Better card spacing in general */
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+/* Showcase section spacing */
+.showcase-section {
+  background: #f8f8f8;
+}
+
+.portfolio-preview-card {
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid var(--gray);
+  background: var(--white);
+}
+
+.portfolio-preview-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.portfolio-preview-card:hover img {
+  transform: scale(1.03);
+}
+
+/* Audience/value sections */
+.audience-section,
+.value-section {
+  background: #fcfcfc;
+}
+
+/* Hero panel polish */
+.hero-panel-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* Footer text spacing */
+.site-footer p {
+  margin-bottom: 8px;
+  color: #d8d8d8;
+}
+
+.site-footer h3 {
+  margin-bottom: 10px;
+}
+
+/* Mobile nav support */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--black);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Responsive improvements */
+@media (max-width: 900px) {
+  .about-layout,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 72px;
+    right: 0;
+    width: 100%;
+    background: var(--white);
+    border-top: 1px solid var(--gray);
+    flex-direction: column;
+    gap: 0;
+    z-index: 999;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    border-bottom: 1px solid var(--gray);
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 16px 20px;
+  }
+
+  .hero-grid,
+  .service-list,
+  .portfolio-preview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 2.1rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+}
