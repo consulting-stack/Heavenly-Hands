@@ -3,22 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Contact | Heavenly Hands Custom Designs</title>
+
   <meta
     name="description"
-    content="Contact Heavenly Hands Custom Designs to start your custom vehicle branding, food truck design, mobile business build, interior layout, or fleet branding project."
+    content="Contact Heavenly Hands Custom Designs to start your custom vehicle branding, wraps, food truck build, mobile business design, or fleet project."
   />
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
   <header class="site-header">
     <nav class="navbar">
       <a href="index.html" class="logo">Heavenly Hands Custom Designs</a>
 
-      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-        ☰
-      </button>
+      <button class="menu-toggle">☰</button>
 
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -30,132 +38,131 @@
     </nav>
   </header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero-dark">
-      <div class="container">
-        <div class="text-center">
-          <div class="hero-badge">Start Your Project</div>
-          <h1>Let’s Build Something That Makes Your Business Stand Out</h1>
-          <p>
-            Whether you need wraps and graphics, a food truck concept, a mobile business build,
-            interior layout design, or fleet branding, Heavenly Hands Custom Designs is ready to help
-            bring your vision to life.
-          </p>
-        </div>
+  <!-- HERO -->
+  <section class="hero-dark">
+    <div class="container text-center">
+      <div class="hero-badge">Start Your Project</div>
+      <h1>Let’s Bring Your Vehicle Design to Life</h1>
+      <p>
+        Tell us about your project and we’ll help you create a custom solution
+        that strengthens your brand, improves your presence, and works for your business.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section>
+    <div class="container contact-layout">
+
+      <!-- FORM -->
+      <div class="form-card">
+        <h2>Project Inquiry</h2>
+        <p>
+          Fill out the form below and we’ll follow up with next steps.
+        </p>
+
+        <form action="#" method="POST">
+
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required />
+
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" />
+
+          <label for="service">Service Needed</label>
+          <select id="service" name="service" required>
+            <option value="">Select a service</option>
+            <option>Wraps & Graphics</option>
+            <option>Food Truck Design & Builds</option>
+            <option>Mobile Business Builds</option>
+            <option>Interior Layout Design</option>
+            <option>Fleet Branding</option>
+            <option>Custom Concepts</option>
+          </select>
+
+          <label for="message">Project Details</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            placeholder="Tell us about your vehicle and what you want to create"
+            required
+          ></textarea>
+
+          <button type="submit">Submit Inquiry</button>
+
+        </form>
       </div>
-    </section>
 
-    <!-- CONTACT SECTION -->
-    <section>
-      <div class="container contact-layout">
-        <div class="form-card">
-          <h2>Tell Us About Your Project</h2>
-          <p>
-            Fill out the form below and let us know what you are looking to create.
-            We’ll review your inquiry and follow up with the next steps.
-          </p>
+      <!-- INFO SIDE -->
+      <div class="contact-card">
+        <h2>Contact Information</h2>
 
-          <form action="#" method="POST">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter your full name" required />
-
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email address" required />
-
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" />
-
-            <label for="service">Service Needed</label>
-            <select id="service" name="service" required>
-              <option value="">Select a service</option>
-              <option value="Wraps & Graphics">Wraps & Graphics</option>
-              <option value="Food Truck Design & Builds">Food Truck Design & Builds</option>
-              <option value="Mobile Business Builds">Mobile Business Builds</option>
-              <option value="Interior Layout Design">Interior Layout Design</option>
-              <option value="Fleet Branding">Fleet Branding</option>
-              <option value="Custom Design Concepts">Custom Design Concepts</option>
-            </select>
-
-            <label for="message">Project Details</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="6"
-              placeholder="Tell us about your vehicle, your business, and what you want to create"
-              required
-            ></textarea>
-
-            <button type="submit">Submit Project Inquiry</button>
-          </form>
+        <div class="contact-info">
+          <p><strong>Phone:</strong> 000.000.0000</p>
+          <p><strong>Email:</strong> info@heavenlyhandscustomdesigns.com</p>
         </div>
 
-        <div class="contact-card">
-          <h2>Contact Information</h2>
-          <div class="contact-info">
-            <p><strong>Phone:</strong> 000.000.0000</p>
-            <p><strong>Email:</strong> info@heavenlyhandscustomdesigns.com</p>
-            <p><strong>Serving:</strong> Businesses seeking custom commercial vehicle design solutions</p>
-          </div>
+        <hr>
 
-          <hr>
+        <h3>What You Can Reach Out About</h3>
 
-          <h3>What You Can Reach Out About</h3>
-          <ul class="benefits-list">
-            <li>Vehicle wraps and graphics</li>
-            <li>Food truck concepts and branded builds</li>
-            <li>Mobile business design ideas</li>
-            <li>Interior layout planning</li>
-            <li>Fleet branding projects</li>
-            <li>Custom commercial vehicle design needs</li>
-          </ul>
+        <ul class="benefits-list">
+          <li>Vehicle wraps and branding</li>
+          <li>Food truck and mobile business builds</li>
+          <li>Interior vehicle layout design</li>
+          <li>Fleet branding projects</li>
+          <li>Custom commercial vehicle concepts</li>
+        </ul>
 
-          <hr>
+        <hr>
 
-          <h3>Why Reach Out Early</h3>
-          <p>
-            The earlier we understand your concept, the better we can align design,
-            function, and brand presence from the start. Strong projects come from clarity,
-            not guesswork.
-          </p>
-        </div>
+        <h3>Why Reach Out Early</h3>
+        <p>
+          The earlier we understand your project, the better we can align design,
+          function, and brand impact from the start.
+        </p>
       </div>
-    </section>
 
-    <!-- TRUST STRIP -->
-    <section>
-      <div class="container">
-        <div class="feature-strip">
-          <h2>Experience You Can Build On</h2>
-          <p>
-            Since 1992, Heavenly Hands Custom Designs has helped businesses bring bold,
-            custom commercial vehicle ideas to life with creativity, strategy, and lasting visual impact.
-          </p>
-        </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section>
+    <div class="container">
+      <div class="feature-strip">
+        <h2>Experience You Can Trust</h2>
+        <p>
+          Heavenly Hands Custom Designs has been helping businesses create stronger,
+          more professional vehicle presence since 1992.
+        </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CTA -->
-    <section class="cta-section">
-      <div class="container">
-        <div class="cta-box">
-          <h2>Need Inspiration Before You Start?</h2>
-          <p>
-            Explore our portfolio to see how custom vehicle branding and design can elevate your business.
-          </p>
-          <a href="portfolio.html" class="btn">View Portfolio</a>
-        </div>
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Want to See Our Work First?</h2>
+        <p>
+          Explore our portfolio to see how we transform vehicles into powerful business assets.
+        </p>
+        <a href="portfolio.html" class="btn">View Portfolio</a>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
       <h3>Heavenly Hands Custom Designs</h3>
-      <p>Custom Vehicle Branding & Mobile Business Design Since 1992</p>
+      <p>Since 1992</p>
       <p>Phone: 000.000.0000</p>
       <p>Email: info@heavenlyhandscustomdesigns.com</p>
-      <p>&copy; 2026 Heavenly Hands Custom Designs. All rights reserved.</p>
     </div>
   </footer>
 
