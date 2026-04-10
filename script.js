@@ -4,19 +4,17 @@ document.addEventListener("DOMContentLoaded", function () {
   setupForms();
 });
 
-/* MOBILE MENU */
 function setupMobileMenu() {
   const toggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector(".nav-links");
 
   if (!toggle || !nav) return;
 
-  toggle.addEventListener("click", () => {
+  toggle.addEventListener("click", function () {
     nav.classList.toggle("show");
   });
 }
 
-/* ACTIVE NAV */
 function setupActiveNav() {
   const current = window.location.pathname.split("/").pop() || "index.html";
   const links = document.querySelectorAll(".nav-links a");
@@ -28,7 +26,6 @@ function setupActiveNav() {
   });
 }
 
-/* FORMS */
 function setupForms() {
   const forms = document.querySelectorAll("form");
   if (!forms.length) return;
@@ -37,9 +34,7 @@ function setupForms() {
     form.addEventListener("submit", function (e) {
       const name = form.querySelector("#name");
       const email = form.querySelector("#email");
-      const message =
-        form.querySelector("#message") ||
-        form.querySelector("#details");
+      const message = form.querySelector("#message") || form.querySelector("#details");
 
       if (name && !name.value.trim()) {
         e.preventDefault();
@@ -59,10 +54,8 @@ function setupForms() {
         return;
       }
 
-      /* IMPORTANT:
-         Do NOT prevent default here.
-         If validation passes, the form submits normally to Formspree.
-      */
+      /* If validation passes, do NOT prevent default.
+         The form will submit normally to Formspree. */
     });
   });
 }
