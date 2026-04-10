@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Request a custom quote from Heavenly Hands Custom Designs for wraps, food truck builds, mobile business builds, interior layouts, fleet branding, and custom commercial vehicle design."
+    content="Request a custom quote from Heavenly Hands Custom Designs for wraps, food truck builds, mobile business builds, interior layouts, fleet branding, and custom vehicle design."
   />
 
   <!-- GOOGLE FONTS -->
@@ -26,7 +26,7 @@
     <nav class="navbar">
       <a href="index.html" class="logo">Heavenly Hands Custom Designs</a>
 
-      <button class="menu-toggle">☰</button>
+      <button class="menu-toggle" type="button">☰</button>
 
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -44,7 +44,7 @@
       <div class="hero-badge">Request a Quote</div>
       <h1>Tell Us About Your Project</h1>
       <p>
-        Complete the questionnaire below so we can better understand your vehicle,
+        Complete the questionnaire below so we can understand your vehicle,
         your business, and the type of custom design solution you need.
       </p>
     </div>
@@ -60,9 +60,8 @@
           and prepare a more accurate quote.
         </p>
 
-       <form action="https://formspree.io/f/xaq1zgab" method="POST">
-  <input type="hidden" name="_subject" value="New Quote Request - Heavenly Hands" />
-  <input type="hidden" name="_next" value="https://consulting-stack.github.io/Heavenly-Hands/thank-you.html" />
+        <form action="https://formspree.io/f/xaq1zgab" method="POST">
+          <input type="hidden" name="_subject" value="New Quote Request - Heavenly Hands" />
 
           <label for="name">Full Name</label>
           <input type="text" id="name" name="name" placeholder="Enter your full name" required />
@@ -80,54 +79,60 @@
           <input type="text" id="location" name="location" placeholder="Enter your city and state" />
 
           <label for="vehicleType">Type of Vehicle</label>
-          <input type="text" id="vehicleType" name="vehicleType" placeholder="Example: cargo van, box truck, food truck, trailer" required />
+          <input
+            type="text"
+            id="vehicleType"
+            name="vehicleType"
+            placeholder="Example: cargo van, box truck, food truck, trailer"
+            required
+          />
 
           <label for="vehicleCount">Number of Vehicles</label>
           <select id="vehicleCount" name="vehicleCount" required>
             <option value="">Select one</option>
-            <option>1</option>
-            <option>2-3</option>
-            <option>4-10</option>
-            <option>11+</option>
+            <option value="1">1</option>
+            <option value="2-3">2-3</option>
+            <option value="4-10">4-10</option>
+            <option value="11+">11+</option>
           </select>
 
           <label for="service">Primary Service Needed</label>
           <select id="service" name="service" required>
             <option value="">Select a service</option>
-            <option>Wraps & Graphics</option>
-            <option>Food Truck Design & Builds</option>
-            <option>Mobile Business Builds</option>
-            <option>Interior Layout Design</option>
-            <option>Fleet Branding</option>
-            <option>Custom Design Concepts</option>
+            <option value="Wraps & Graphics">Wraps & Graphics</option>
+            <option value="Food Truck Design & Builds">Food Truck Design & Builds</option>
+            <option value="Mobile Business Builds">Mobile Business Builds</option>
+            <option value="Interior Layout Design">Interior Layout Design</option>
+            <option value="Fleet Branding">Fleet Branding</option>
+            <option value="Custom Design Concepts">Custom Design Concepts</option>
           </select>
 
           <label for="projectStage">Project Stage</label>
           <select id="projectStage" name="projectStage">
             <option value="">Select one</option>
-            <option>Just exploring ideas</option>
-            <option>Ready for design</option>
-            <option>Need pricing soon</option>
-            <option>Ready to start immediately</option>
+            <option value="Just exploring ideas">Just exploring ideas</option>
+            <option value="Ready for design">Ready for design</option>
+            <option value="Need pricing soon">Need pricing soon</option>
+            <option value="Ready to start immediately">Ready to start immediately</option>
           </select>
 
           <label for="timeline">Desired Timeline</label>
           <select id="timeline" name="timeline">
             <option value="">Select one</option>
-            <option>As soon as possible</option>
-            <option>Within 30 days</option>
-            <option>Within 60-90 days</option>
-            <option>Just planning for now</option>
+            <option value="As soon as possible">As soon as possible</option>
+            <option value="Within 30 days">Within 30 days</option>
+            <option value="Within 60-90 days">Within 60-90 days</option>
+            <option value="Just planning for now">Just planning for now</option>
           </select>
 
           <label for="budget">Estimated Budget Range</label>
           <select id="budget" name="budget">
             <option value="">Select one</option>
-            <option>Under $2,500</option>
-            <option>$2,500 - $5,000</option>
-            <option>$5,000 - $10,000</option>
-            <option>$10,000+</option>
-            <option>Need guidance</option>
+            <option value="Under $2,500">Under $2,500</option>
+            <option value="$2,500 - $5,000">$2,500 - $5,000</option>
+            <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+            <option value="$10,000+">$10,000+</option>
+            <option value="Need guidance">Need guidance</option>
           </select>
 
           <label for="details">Project Details</label>
@@ -180,7 +185,7 @@
         <h3>What Happens Next</h3>
         <p>
           Once submitted, we can review your request, evaluate the likely scope,
-          and follow up to discuss pricing, next steps, or additional details needed for a quote.
+          and follow up to discuss pricing, next steps, or any additional details needed for a quote.
         </p>
       </div>
 
@@ -220,6 +225,15 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".nav-links");
+
+    if (toggle && nav) {
+      toggle.addEventListener("click", function () {
+        nav.classList.toggle("show");
+      });
+    }
+  </script>
 </body>
 </html>
