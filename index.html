@@ -4,17 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Heavenly Hands Custom Designs | Vehicle Branding Since 1992</title>
-  <meta name="description" content="Premium vehicle wraps, food truck builds, and mobile business design. Serving clients since 1992." />
-
-  <!-- GOOGLE FONTS -->
+  <meta name="description" content="Premium vehicle wraps, food truck builds, and mobile business design since 1992." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
   <!-- NAV -->
@@ -23,9 +18,7 @@
       <a href="index.html">
         <img src="logo.png" alt="Heavenly Hands Custom Designs" class="logo-img" />
       </a>
-
       <button class="menu-toggle" type="button" aria-label="Toggle menu">☰</button>
-
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -37,10 +30,13 @@
     </nav>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO SLIDESHOW -->
   <section class="hero">
-    <div class="hero-bg"></div>
+    <div class="hero-slide active"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
     <div class="hero-overlay"></div>
+
     <div class="hero-content">
       <div class="hero-eyebrow">Est. 1992 — Custom Vehicle Branding</div>
       <h1>Your Vehicle Is Your<br /><span>Most Powerful</span> Billboard</h1>
@@ -49,6 +45,12 @@
         <a href="quote.html" class="btn-primary">Start Your Project</a>
         <a href="portfolio.html" class="btn-outline">View Our Work</a>
       </div>
+    </div>
+
+    <div class="slide-dots">
+      <button class="slide-dot active" data-index="0"></button>
+      <button class="slide-dot" data-index="1"></button>
+      <button class="slide-dot" data-index="2"></button>
     </div>
   </section>
 
@@ -75,72 +77,65 @@
   </div>
 
   <!-- SERVICES -->
-  <section class="services-section">
+  <section class="bg-dots">
     <div class="container">
       <div class="section-label">What We Do</div>
       <h2 class="section-title">Built for Businesses<br />That Demand Attention</h2>
       <p class="section-sub">Every service is custom-tailored to your brand, your vehicle, and your goals.</p>
-
       <div class="services-grid">
-
         <div class="service-card">
           <span class="service-icon">🎨</span>
           <h3>Wraps & Graphics</h3>
-          <p>Full and partial vehicle wraps that transform your fleet into moving brand ambassadors. Designed to turn heads.</p>
+          <p>Full and partial vehicle wraps that transform your fleet into moving brand ambassadors.</p>
         </div>
-
         <div class="service-card">
           <span class="service-icon">🚚</span>
           <h3>Food Truck Builds</h3>
           <p>End-to-end food truck design and construction — from concept to the street-ready final product.</p>
         </div>
-
         <div class="service-card">
           <span class="service-icon">🏗️</span>
           <h3>Mobile Business Builds</h3>
           <p>Custom mobile showrooms, service vehicles, and trade rigs built to function as well as they look.</p>
         </div>
-
         <div class="service-card">
           <span class="service-icon">📐</span>
           <h3>Interior Layout Design</h3>
           <p>Precision interior planning that maximizes space, workflow, and professionalism inside every vehicle.</p>
         </div>
-
         <div class="service-card">
           <span class="service-icon">🚛</span>
           <h3>Fleet Branding</h3>
-          <p>Consistent, cohesive branding across your entire fleet — from single vans to 50-vehicle operations.</p>
+          <p>Consistent, cohesive branding across your entire fleet — from single vans to large operations.</p>
         </div>
-
         <div class="service-card">
           <span class="service-icon">💡</span>
           <h3>Custom Design Concepts</h3>
           <p>Got a vision that doesn't fit a template? We build it. Bring your idea and we'll make it real.</p>
         </div>
-
       </div>
     </div>
   </section>
 
+  <hr class="purple-divider" />
+
   <!-- PORTFOLIO -->
-  <section class="portfolio-section">
+  <section class="bg-glow">
     <div class="container">
       <div class="section-label">Our Work</div>
       <h2 class="section-title">Every Job Tells a Story</h2>
-      <p class="section-sub">A look at some of the vehicles and businesses we've helped build and brand.</p>
-
+      <p class="section-sub">A look at vehicles and businesses we've helped build and brand.</p>
       <div class="portfolio-grid">
         <div class="portfolio-item">
-          <img src="van-1.jpg" alt="Custom van branding rear view" />
+          <img src="van-1.jpg" alt="Custom van branding" />
           <div class="portfolio-overlay"><span>Vehicle Wrap</span></div>
         </div>
         <div class="portfolio-item">
-          <img src="van-2.jpg" alt="Custom van branding side view" />
+          <img src="van-2.jpg" alt="Custom van side view" />
           <div class="portfolio-overlay"><span>Fleet Branding</span></div>
         </div>
         <div class="portfolio-item">
-          <img src="van-3.jpg" alt="Custom van branding front view" />
+          <img src="van-3.jpg" alt="Custom van front view" />
           <div class="portfolio-overlay"><span>Custom Graphics</span></div>
         </div>
       </div>
@@ -157,12 +152,10 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-grid">
-
       <div class="footer-brand">
         <img src="logo.png" alt="Heavenly Hands Custom Designs" class="logo-img" />
         <p>Premium vehicle branding and mobile business builds. Crafted with precision since 1992.</p>
       </div>
-
       <div class="footer-col">
         <h4>Navigation</h4>
         <ul>
@@ -174,41 +167,50 @@
           <li><a href="quote.html">Get a Quote</a></li>
         </ul>
       </div>
-
       <div class="footer-col">
         <h4>Contact</h4>
-        <p>
-          Phone: 000.000.0000<br />
-          Email: info@heavenlyhandscustomdesigns.com
-        </p>
+        <p>Phone: (832) 720-4079<br />Email: info@heavenlyhandscustomdesigns.com</p>
       </div>
-
     </div>
-
     <div class="footer-bottom">
       <p>© 2025 Heavenly Hands Custom Designs. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- SCRIPTS -->
   <script>
-    // Mobile menu
-    const toggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".nav-links");
-    if (toggle && nav) {
-      toggle.addEventListener("click", () => nav.classList.toggle("show"));
+    // Slideshow
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.slide-dot');
+    let current = 0;
+
+    function goTo(index) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = index;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
     }
 
-    // Navbar scroll effect
-    const header = document.querySelector(".site-header");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 60) {
-        header.style.background = "rgba(10,10,10,0.98)";
-      } else {
-        header.style.background = "rgba(10,10,10,0.85)";
-      }
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => goTo(parseInt(dot.dataset.index)));
     });
-  </script>
 
+    setInterval(() => goTo((current + 1) % slides.length), 5000);
+
+    // Navbar scroll
+    const header = document.querySelector('.site-header');
+    window.addEventListener('scroll', () => {
+      header.style.background = window.scrollY > 60
+        ? 'rgba(10,10,10,0.98)'
+        : 'rgba(10,10,10,0.90)';
+    });
+
+    // Mobile menu
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav-links');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => nav.classList.toggle('show'));
+    }
+  </script>
 </body>
 </html>
