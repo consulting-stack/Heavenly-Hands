@@ -43,29 +43,36 @@
   <!-- HERO -->
   <section class="hero-dark">
     <div class="container text-center">
-      <h1>Request a Quote</h1>
-      <p>Tell us about your project and we’ll follow up with next steps and pricing.</p>
+      <div class="hero-badge">Request a Quote</div>
+      <h1>Tell Us About Your Project</h1>
+      <p>Fill this out and we’ll follow up with next steps and pricing.</p>
     </div>
   </section>
 
-  <!-- FORM -->
+  <!-- FORM SECTION -->
   <section>
     <div class="container contact-layout">
 
+      <!-- FORM -->
       <div class="form-card">
-        <h2>Quote Request Form</h2>
+        <h2>Quote Request</h2>
+        <p>Please complete the form below.</p>
 
         <form action="https://formspree.io/f/mkoplagk" method="POST">
 
+          <!-- SUBJECT -->
           <input type="hidden" name="_subject" value="New Quote Request - Heavenly Hands" />
 
-          <label>Name</label>
+          <!-- REDIRECT TO YOUR THANK YOU PAGE -->
+          <input type="hidden" name="_next" value="https://consulting-stack.github.io/Heavenly-Hands/thank-you.html" />
+
+          <label>Full Name</label>
           <input type="text" name="name" required />
 
-          <label>Email</label>
+          <label>Email Address</label>
           <input type="email" name="email" required />
 
-          <label>Phone</label>
+          <label>Phone Number</label>
           <input type="tel" name="phone" />
 
           <label>Type of Vehicle</label>
@@ -73,12 +80,13 @@
 
           <label>Service Needed</label>
           <select name="service" required>
-            <option value="">Select</option>
+            <option value="">Select a service</option>
             <option>Wraps & Graphics</option>
-            <option>Food Truck Build</option>
-            <option>Mobile Business Build</option>
-            <option>Interior Layout</option>
+            <option>Food Truck Design & Builds</option>
+            <option>Mobile Business Builds</option>
+            <option>Interior Layout Design</option>
             <option>Fleet Branding</option>
+            <option>Custom Design Concepts</option>
           </select>
 
           <label>Project Details</label>
@@ -95,6 +103,9 @@
         <p>
           Once submitted, we review your request and follow up with pricing,
           recommendations, or next steps based on your project.
+        </p>
+        <p>
+          The more detail you provide, the faster and more accurate we can respond.
         </p>
       </div>
 
