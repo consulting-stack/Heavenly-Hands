@@ -3,18 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Request a Quote | Heavenly Hands Custom Designs</title>
+
   <meta
     name="description"
-    content="Request a quote from Heavenly Hands Custom Designs for wraps, mobile business builds, food truck design, and fleet branding."
+    content="Request a quote from Heavenly Hands Custom Designs for wraps, food truck builds, mobile business builds, and fleet branding."
   />
 
+  <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+
+  <!-- NAV -->
   <header class="site-header">
     <nav class="navbar">
       <a href="index.html" class="logo">Heavenly Hands Custom Designs</a>
@@ -32,60 +40,68 @@
     </nav>
   </header>
 
+  <!-- HERO -->
   <section class="hero-dark">
     <div class="container text-center">
-      <div class="hero-badge">Request a Quote</div>
-      <h1>Tell Us About Your Project</h1>
-      <p>Fill this out and we’ll review your request and follow up with pricing or next steps.</p>
+      <h1>Request a Quote</h1>
+      <p>Tell us about your project and we’ll follow up with next steps and pricing.</p>
     </div>
   </section>
 
+  <!-- FORM -->
   <section>
     <div class="container contact-layout">
-      <div class="form-card">
-        <h2>Quote Request</h2>
-        <p>Please complete the form below.</p>
 
-        <form action="https://formspree.io/f/xaq1zgab" method="POST">
+      <div class="form-card">
+        <h2>Quote Request Form</h2>
+
+        <form action="https://formspree.io/f/mkoplagk" method="POST">
+
           <input type="hidden" name="_subject" value="New Quote Request - Heavenly Hands" />
 
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" required />
+          <label>Name</label>
+          <input type="text" name="name" required />
 
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" required />
+          <label>Email</label>
+          <input type="email" name="email" required />
 
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" />
+          <label>Phone</label>
+          <input type="tel" name="phone" />
 
-          <label for="vehicleType">Type of Vehicle</label>
-          <input type="text" id="vehicleType" name="vehicleType" required />
+          <label>Type of Vehicle</label>
+          <input type="text" name="vehicle" placeholder="Van, Truck, Trailer, etc." required />
 
-          <label for="service">Service Needed</label>
-          <select id="service" name="service" required>
-            <option value="">Select a service</option>
-            <option value="Wraps & Graphics">Wraps & Graphics</option>
-            <option value="Food Truck Design & Builds">Food Truck Design & Builds</option>
-            <option value="Mobile Business Builds">Mobile Business Builds</option>
-            <option value="Interior Layout Design">Interior Layout Design</option>
-            <option value="Fleet Branding">Fleet Branding</option>
-            <option value="Custom Design Concepts">Custom Design Concepts</option>
+          <label>Service Needed</label>
+          <select name="service" required>
+            <option value="">Select</option>
+            <option>Wraps & Graphics</option>
+            <option>Food Truck Build</option>
+            <option>Mobile Business Build</option>
+            <option>Interior Layout</option>
+            <option>Fleet Branding</option>
           </select>
 
-          <label for="details">Project Details</label>
-          <textarea id="details" name="details" rows="6" required></textarea>
+          <label>Project Details</label>
+          <textarea name="details" rows="6" required></textarea>
 
           <button type="submit">Submit Quote Request</button>
+
         </form>
       </div>
 
+      <!-- SIDE INFO -->
       <div class="contact-card">
         <h2>What Happens Next</h2>
-        <p>After submission, we’ll review the scope and follow up to discuss pricing and next steps.</p>
+        <p>
+          Once submitted, we review your request and follow up with pricing,
+          recommendations, or next steps based on your project.
+        </p>
       </div>
+
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
       <h3>Heavenly Hands Custom Designs</h3>
@@ -95,14 +111,17 @@
     </div>
   </footer>
 
+  <!-- SIMPLE MENU SCRIPT ONLY -->
   <script>
     const toggle = document.querySelector(".menu-toggle");
     const nav = document.querySelector(".nav-links");
+
     if (toggle && nav) {
       toggle.addEventListener("click", function () {
         nav.classList.toggle("show");
       });
     }
   </script>
+
 </body>
 </html>
