@@ -3,228 +3,328 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Portfolio | Heavenly Hands Custom Designs</title>
-
-  <meta
-    name="description"
-    content="View the portfolio of Heavenly Hands Custom Designs, featuring custom vehicle branding, wraps and graphics, mobile business concepts, and commercial vehicle design work."
-  />
-
-  <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-</head>
+  <style>
+    .portfolio-full-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
 
+    .portfolio-full-grid .portfolio-item.wide {
+      grid-column: span 2;
+    }
+
+    .portfolio-full-grid .portfolio-item.tall {
+      grid-row: span 2;
+    }
+
+    .portfolio-item {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: var(--black-card);
+      border: 1px solid rgba(139,92,246,0.1);
+    }
+
+    .portfolio-item.wide { aspect-ratio: unset; min-height: 280px; }
+    .portfolio-item.tall { aspect-ratio: unset; min-height: 580px; }
+
+    .portfolio-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      display: block;
+    }
+
+    .portfolio-item:hover img { transform: scale(1.06); }
+
+    .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,10,10,0.88) 0%, rgba(139,92,246,0.08) 60%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px;
+    }
+
+    .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+
+    .portfolio-overlay .tag {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--purple-light);
+      margin-bottom: 6px;
+    }
+
+    .portfolio-overlay .title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    /* Placeholder cards for future work */
+    .portfolio-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: var(--black-card);
+      border: 1px dashed rgba(139,92,246,0.25);
+      border-radius: 12px;
+      aspect-ratio: 4/3;
+      color: var(--gray-mid);
+    }
+
+    .portfolio-placeholder span {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 56px;
+    }
+
+    .process-step {
+      text-align: center;
+      padding: 32px 20px;
+      background: var(--black-card);
+      border: 1px solid rgba(139,92,246,0.15);
+      border-radius: 14px;
+      position: relative;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .process-step:hover {
+      border-color: var(--purple);
+      transform: translateY(-4px);
+    }
+
+    .step-number {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: rgba(139,92,246,0.2);
+      line-height: 1;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .process-step h3 {
+      font-size: 0.95rem;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .process-step p {
+      font-size: 0.82rem;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .portfolio-full-grid {
+        grid-template-columns: 1fr;
+      }
+      .portfolio-full-grid .portfolio-item.wide,
+      .portfolio-full-grid .portfolio-item.tall {
+        grid-column: span 1;
+        grid-row: span 1;
+        min-height: unset;
+        aspect-ratio: 4/3;
+      }
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
 <body>
 
   <header class="site-header">
     <nav class="navbar">
-      <a href="index.html" class="logo">Heavenly Hands Custom Designs</a>
-
-      <button class="menu-toggle">☰</button>
-
+      <a href="index.html">
+        <img src="logo.png" alt="Heavenly Hands Custom Designs" class="logo-img" />
+      </a>
+      <button class="menu-toggle" type="button">☰</button>
       <ul class="nav-links">
-        <li><a href="quote.html">Request a Quote</a></li>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="portfolio.html" class="active">Portfolio</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li><a href="quote.html" class="nav-cta">Get a Quote</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="hero-dark">
-    <div class="container text-center">
-      <div class="hero-badge">Our Portfolio</div>
-      <h1>See How We Turn Vehicles Into Brand Assets</h1>
-      <p>
-        Explore selected work from Heavenly Hands Custom Designs and see how thoughtful,
-        custom vehicle design can strengthen visibility, professionalism, and brand presence.
-      </p>
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-content">
+      <div class="section-label">Our Work</div>
+      <h1>Built to Be Seen.<br />Designed to Last.</h1>
+      <p>Every project in our portfolio represents a business that decided to stop blending in. Here's what that looks like.</p>
     </div>
-  </section>
+  </div>
 
-  <section class="showcase-section">
-    <div class="container text-center">
-      <h2 class="section-title">Featured Projects</h2>
-      <p class="section-subtitle">
-        Every project represents more than a visual upgrade — it represents a stronger first impression
-        and a more powerful business presence on the road.
-      </p>
-
-      <div class="portfolio-preview-grid">
-        <div class="portfolio-preview-card">
-          <img src="van-1.jpg" alt="Custom branded van rear view by Heavenly Hands Custom Designs" />
-        </div>
-        <div class="portfolio-preview-card">
-          <img src="van-2.jpg" alt="Custom branded van side view by Heavenly Hands Custom Designs" />
-        </div>
-        <div class="portfolio-preview-card">
-          <img src="van-3.jpg" alt="Custom branded van front view by Heavenly Hands Custom Designs" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container text-center">
-      <h2 class="section-title">What Our Work Delivers</h2>
-      <p class="section-subtitle">
-        The value of custom design is not just in how it looks — it is in how it helps a business
-        present itself, attract attention, and create confidence in the customer.
-      </p>
-
-      <div class="grid grid-3">
-        <div class="card">
-          <h3>Brand Visibility</h3>
-          <p>
-            Vehicles that are easier to recognize, easier to remember, and more effective
-            at representing the business behind them.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Professional Presentation</h3>
-          <p>
-            Cleaner, stronger visual design that makes a business look more established,
-            organized, and credible.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Functional Design Thinking</h3>
-          <p>
-            Concepts that consider not only aesthetics but also how the vehicle needs to
-            support day-to-day workflow and business performance.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container about-layout">
-      <div class="card">
-        <h2>Commercial Vehicle Branding</h2>
-        <p>
-          Commercial vans and trucks are often one of the most visible parts of a business.
-          When designed well, they become powerful mobile advertisements and trust signals.
-        </p>
-        <p>
-          Our portfolio reflects the ability to take plain commercial vehicles and transform them
-          into polished, customer-facing brand assets.
-        </p>
-      </div>
-
-      <div class="card">
-        <h2>Mobile Business Concepts</h2>
-        <p>
-          Mobile businesses require design that balances aesthetics with usability.
-          Food trucks, custom commercial builds, and interior layouts all demand more than surface-level styling.
-        </p>
-        <p>
-          We approach these projects with a focus on workflow, brand identity, and the experience
-          customers have when they encounter the vehicle.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section>
+  <!-- PORTFOLIO GRID -->
+  <section class="bg-dots">
     <div class="container">
-      <div class="feature-strip">
-        <h2>Built on Experience Since 1992</h2>
-        <p>
-          A strong portfolio is backed by strong experience. Heavenly Hands Custom Designs has spent decades
-          helping businesses create custom vehicle designs that feel professional, intentional, and built to last.
-        </p>
+      <div class="section-label">Portfolio</div>
+      <h2 class="section-title">Recent Projects</h2>
+      <p class="section-sub">A growing collection of vehicles we've wrapped, built, and branded.</p>
+
+      <div class="portfolio-full-grid">
+
+        <div class="portfolio-item wide">
+          <img src="van-1.jpg" alt="Custom van branding" />
+          <div class="portfolio-overlay">
+            <span class="tag">Vehicle Wrap</span>
+            <span class="title">Commercial Van Full Wrap</span>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <img src="van-3.jpg" alt="Custom van front view" />
+          <div class="portfolio-overlay">
+            <span class="tag">Custom Graphics</span>
+            <span class="title">Brand Identity Wrap</span>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <img src="van-2.jpg" alt="Custom van side view" />
+          <div class="portfolio-overlay">
+            <span class="tag">Fleet Branding</span>
+            <span class="title">Fleet Vehicle Wrap</span>
+          </div>
+        </div>
+
+        <div class="portfolio-item wide">
+          <img src="van-3.jpg" alt="Custom van side view" />
+          <div class="portfolio-overlay">
+            <span class="tag">Mobile Business Build</span>
+            <span class="title">Mobile Service Vehicle</span>
+          </div>
+        </div>
+
+        <!-- Placeholders for future work -->
+        <div class="portfolio-placeholder">
+          <span style="font-size: 1.8rem;">📷</span>
+          <span>More Coming Soon</span>
+        </div>
+
+        <div class="portfolio-placeholder">
+          <span style="font-size: 1.8rem;">📷</span>
+          <span>More Coming Soon</span>
+        </div>
+
+        <div class="portfolio-placeholder">
+          <span style="font-size: 1.8rem;">📷</span>
+          <span>More Coming Soon</span>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <section class="showcase-section">
-    <div class="container text-center">
-      <h2 class="section-title">Project Gallery</h2>
-      <p class="section-subtitle">
-        Additional visual examples from our work. As the business grows online, this gallery can expand
-        into a deeper showcase of categories, completed builds, and before-and-after transformations.
-      </p>
+  <hr class="purple-divider" />
 
-      <div class="portfolio-preview-grid">
-        <div class="portfolio-preview-card">
-          <img src="van-2.jpg" alt="Vehicle branding side profile by Heavenly Hands Custom Designs" />
-        </div>
-        <div class="portfolio-preview-card">
-          <img src="van-3.jpg" alt="Vehicle branding front profile by Heavenly Hands Custom Designs" />
-        </div>
-        <div class="portfolio-preview-card">
-          <img src="van-1.jpg" alt="Vehicle branding rear profile by Heavenly Hands Custom Designs" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container text-center">
-      <h2 class="section-title">Why the Portfolio Matters</h2>
-      <p class="section-subtitle">
-        In a custom design business, people are not only buying a service. They are buying confidence
-        that the finished product will reflect their business the right way.
-      </p>
-
-      <div class="grid grid-3">
-        <div class="card">
-          <h3>Proof of Capability</h3>
-          <p>
-            Real project visuals show that the work is polished, intentional, and execution-focused.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Proof of Taste</h3>
-          <p>
-            The quality of the design work helps customers judge whether the brand understands strong visual presentation.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Proof of Trust</h3>
-          <p>
-            Seeing finished work reduces uncertainty and makes it easier for serious prospects to reach out.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta-section">
+  <!-- PROCESS -->
+  <section class="bg-glow">
     <div class="container">
-      <div class="cta-box">
-        <h2>Want Your Vehicle to Make a Stronger Impression?</h2>
-        <p>
-          Let’s create a custom design that strengthens your brand, sharpens your presentation,
-          and helps your business stand out everywhere it goes.
-        </p>
-        <a href="contact.html" class="btn">Start Your Project</a>
+      <div class="section-label">How It Works</div>
+      <h2 class="section-title">From Idea to Road-Ready</h2>
+      <p class="section-sub">A simple, transparent process so you always know where your project stands.</p>
+
+      <div class="process-grid">
+        <div class="process-step">
+          <span class="step-number">01</span>
+          <h3>Submit Your Request</h3>
+          <p>Tell us about your vehicle, goals, and timeline through our quote form.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-number">02</span>
+          <h3>Design Consultation</h3>
+          <p>We review your project and follow up with recommendations and pricing.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-number">03</span>
+          <h3>Design & Approval</h3>
+          <p>We build the concept and walk you through revisions until it's exactly right.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-number">04</span>
+          <h3>Install & Deliver</h3>
+          <p>Professional installation and final quality check before your vehicle hits the road.</p>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- CTA -->
+  <section class="cta-band">
+    <h2>Ready to Be in This Portfolio?</h2>
+    <p>Start with a free quote and let's figure out what your vehicle needs.</p>
+    <a href="quote.html" class="btn-primary">Request a Free Quote</a>
+  </section>
+
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container">
-      <h3>Heavenly Hands Custom Designs</h3>
-      <p>Since 1992</p>
-      <p>Phone: 000.000.0000</p>
-      <p>Email: info@heavenlyhandscustomdesigns.com</p>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="logo.png" alt="Heavenly Hands Custom Designs" class="logo-img" />
+        <p>Premium vehicle branding and mobile business builds. Crafted with precision since 1992.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="quote.html">Get a Quote</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Phone: (832) 720-4079<br />Email: info@heavenlyhandscustomdesigns.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Heavenly Hands Custom Designs. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav-links');
+    if (toggle && nav) toggle.addEventListener('click', () => nav.classList.toggle('show'));
+    const header = document.querySelector('.site-header');
+    window.addEventListener('scroll', () => {
+      header.style.background = window.scrollY > 60 ? 'rgba(10,10,10,0.98)' : 'rgba(10,10,10,0.90)';
+    });
+  </script>
+
 </body>
 </html>
