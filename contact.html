@@ -3,170 +3,156 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Contact | Heavenly Hands Custom Designs</title>
-
-  <meta
-    name="description"
-    content="Contact Heavenly Hands Custom Designs to start your custom vehicle branding, wraps, food truck build, mobile business design, or fleet project."
-  />
-
-  <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
   <header class="site-header">
     <nav class="navbar">
-      <a href="index.html" class="logo">Heavenly Hands Custom Designs</a>
-
-      <button class="menu-toggle">☰</button>
-
+      <a href="index.html">
+        <img src="logo.png" alt="Heavenly Hands Custom Designs" class="logo-img" />
+      </a>
+      <button class="menu-toggle" type="button">☰</button>
       <ul class="nav-links">
-        <li><a href="quote.html">Request a Quote</a></li>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
         <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="quote.html" class="nav-cta">Get a Quote</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="hero-dark">
-    <div class="container text-center">
-      <div class="hero-badge">Start Your Project</div>
-      <h1>Let’s Bring Your Vehicle Design to Life</h1>
-      <p>
-        Tell us about your project and we’ll help you create a custom solution
-        that strengthens your brand, improves your presence, and works for your business.
-      </p>
+  <div class="page-hero">
+    <div class="page-hero-content">
+      <div class="section-label">Contact Us</div>
+      <h1>Let's Talk About<br />Your Project</h1>
+      <p>Reach out with questions, project details, or to get the conversation started. We'll follow up quickly.</p>
     </div>
-  </section>
+  </div>
 
-  <!-- CONTACT SECTION -->
-  <section>
-    <div class="container contact-layout">
-
-      <!-- FORM -->
-      <div class="form-card">
-        <h2>Project Inquiry</h2>
-        <p>
-          Fill out the form below and we’ll follow up with next steps.
-        </p>
-
-       <form action="https://formspree.io/f/xaq1zgab" method="POST">
-
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" placeholder="Enter your name" required />
-
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" placeholder="Enter your email" required />
-
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" />
-
-          <label for="service">Service Needed</label>
-          <select id="service" name="service" required>
-            <option value="">Select a service</option>
-            <option>Wraps & Graphics</option>
-            <option>Food Truck Design & Builds</option>
-            <option>Mobile Business Builds</option>
-            <option>Interior Layout Design</option>
-            <option>Fleet Branding</option>
-            <option>Custom Concepts</option>
-          </select>
-
-          <label for="message">Project Details</label>
-          <textarea
-            id="message"
-            name="message"
-            rows="6"
-            placeholder="Tell us about your vehicle and what you want to create"
-            required
-          ></textarea>
-
-          <button type="submit">Submit Inquiry</button>
-
-        </form>
-      </div>
-
-      <!-- INFO SIDE -->
-      <div class="contact-card">
-        <h2>Contact Information</h2>
-
-        <div class="contact-info">
-          <p><strong>Phone:</strong> 000.000.0000</p>
-          <p><strong>Email:</strong> info@heavenlyhandscustomdesigns.com</p>
+  <section class="bg-dots">
+    <div class="container">
+      <div class="contact-layout">
+        <div class="form-card">
+          <h2>Send a Message</h2>
+          <p>Fill out the form and we'll get back to you with next steps.</p>
+          <form id="contact-form" action="https://formspree.io/f/mkoplagk" method="POST">
+            <input type="hidden" name="_subject" value="New Contact - Heavenly Hands" />
+            <input type="hidden" name="_next" value="https://consulting-stack.github.io/Heavenly-Hands/thank-you.html" />
+            <label>Full Name</label>
+            <input type="text" name="name" placeholder="Your name" required />
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="your@email.com" required />
+            <label>Phone Number</label>
+            <input type="tel" name="phone" placeholder="(000) 000-0000" />
+            <label>Service Needed</label>
+            <select name="service" required>
+              <option value="">Select a service</option>
+              <option>Wraps & Graphics</option>
+              <option>Food Truck Design & Builds</option>
+              <option>Mobile Business Builds</option>
+              <option>Interior Layout Design</option>
+              <option>Fleet Branding</option>
+              <option>Custom Design Concepts</option>
+            </select>
+            <label>Message</label>
+            <textarea name="message" rows="5" placeholder="Tell us about your vehicle and what you have in mind..." required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
         </div>
 
-        <hr>
-
-        <h3>What You Can Reach Out About</h3>
-
-        <ul class="benefits-list">
-          <li>Vehicle wraps and branding</li>
-          <li>Food truck and mobile business builds</li>
-          <li>Interior vehicle layout design</li>
-          <li>Fleet branding projects</li>
-          <li>Custom commercial vehicle concepts</li>
-        </ul>
-
-        <hr>
-
-        <h3>Why Reach Out Early</h3>
-        <p>
-          The earlier we understand your project, the better we can align design,
-          function, and brand impact from the start.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- TRUST -->
-  <section>
-    <div class="container">
-      <div class="feature-strip">
-        <h2>Experience You Can Trust</h2>
-        <p>
-          Heavenly Hands Custom Designs has been helping businesses create stronger,
-          more professional vehicle presence since 1992.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="cta-box">
-        <h2>Want to See Our Work First?</h2>
-        <p>
-          Explore our portfolio to see how we transform vehicles into powerful business assets.
-        </p>
-        <a href="portfolio.html" class="btn">View Portfolio</a>
+        <div class="contact-card">
+          <h2>Contact Information</h2>
+          <p>We're ready to help. Reach out directly or use the form.</p>
+          <div class="contact-detail">
+            <span class="icon">📞</span>
+            <div>
+              <strong>Phone</strong>
+              <span>(832) 720-4079</span>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <span class="icon">✉️</span>
+            <div>
+              <strong>Email</strong>
+              <span>info@heavenlyhandscustomdesigns.com</span>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <span class="icon">🕐</span>
+            <div>
+              <strong>Response Time</strong>
+              <span>We typically respond within 1 business day</span>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <span class="icon">🔧</span>
+            <div>
+              <strong>What We Handle</strong>
+              <span>Vehicle wraps, food truck builds, mobile business builds, fleet branding, and custom concepts</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container">
-      <h3>Heavenly Hands Custom Designs</h3>
-      <p>Since 1992</p>
-      <p>Phone: 000.000.0000</p>
-      <p>Email: info@heavenlyhandscustomdesigns.com</p>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="logo.png" alt="Heavenly Hands Custom Designs" class="logo-img" />
+        <p>Premium vehicle branding and mobile business builds. Crafted with precision since 1992.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="quote.html">Get a Quote</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Phone: (832) 720-4079<br />Email: info@heavenlyhandscustomdesigns.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Heavenly Hands Custom Designs. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    const form = document.getElementById('contact-form');
+    if (form) {
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const response = await fetch(form.action, {
+          method: 'POST', body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          window.location.href = 'https://consulting-stack.github.io/Heavenly-Hands/thank-you.html';
+        } else {
+          alert('Something went wrong. Please try again.');
+        }
+      });
+    }
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav-links');
+    if (toggle && nav) toggle.addEventListener('click', () => nav.classList.toggle('show'));
+    const header = document.querySelector('.site-header');
+    window.addEventListener('scroll', () => {
+      header.style.background = window.scrollY > 60 ? 'rgba(10,10,10,0.98)' : 'rgba(10,10,10,0.90)';
+    });
+  </script>
 </body>
 </html>
