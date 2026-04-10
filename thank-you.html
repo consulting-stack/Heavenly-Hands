@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Thank You | Heavenly Hands Custom Designs</title>
+
+  <meta
+    name="description"
+    content="Thank you for contacting Heavenly Hands Custom Designs. Your quote request has been received."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html" class="logo">Heavenly Hands Custom Designs</a>
+
+      <button class="menu-toggle" type="button">☰</button>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="quote.html">Request a Quote</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero-dark">
+    <div class="container text-center">
+      <div class="hero-badge">Thank You</div>
+      <h1>Your Request Has Been Received</h1>
+      <p>
+        Thank you for contacting Heavenly Hands Custom Designs.
+        We’ve received your quote request and will review the details soon.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cta-box" style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <h2>What Happens Next?</h2>
+        <p>
+          Our team will review your submission and follow up with the next steps,
+          additional questions if needed, or pricing guidance based on your project.
+        </p>
+        <p>
+          We appreciate the opportunity to learn more about your business and how we can help
+          transform your vehicle into a stronger brand asset.
+        </p>
+        <a href="index.html" class="btn">Return to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <h3>Heavenly Hands Custom Designs</h3>
+      <p>Since 1992</p>
+      <p>Phone: 000.000.0000</p>
+      <p>Email: info@heavenlyhandscustomdesigns.com</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".nav-links");
+
+    if (toggle && nav) {
+      toggle.addEventListener("click", function () {
+        nav.classList.toggle("show");
+      });
+    }
+  </script>
+</body>
+</html>
