@@ -11,6 +11,8 @@
   <style>
     .star-rating {
       display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
       gap: 8px;
       margin-bottom: 8px;
     }
@@ -28,15 +30,8 @@
     }
     .star-rating input:checked ~ label,
     .star-rating label:hover,
-    .star-rating label:hover ~ label {
-      color: var(--gold-light);
-    }
-    .star-rating {
-      flex-direction: row-reverse;
-      justify-content: flex-end;
-    }
-    .star-rating input:checked + label,
-    .star-rating input:checked ~ label {
+    .star-rating label:hover ~ label,
+    .star-rating input:checked + label {
       color: var(--gold-light);
     }
     .testimonial-hero {
@@ -58,7 +53,13 @@
     }
     .testimonial-hero-content { position: relative; z-index: 1; }
     .testimonial-hero h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 16px; }
-    .testimonial-hero p { color: var(--gray); font-size: 1.05rem; max-width: 520px; margin: 0 auto; line-height: 1.8; }
+    .testimonial-hero p {
+      color: var(--gray);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
     .quote-icon {
       font-size: 3rem;
       color: var(--gold);
@@ -96,18 +97,18 @@
   </div>
 
   <section class="bg-dots">
-    <div class="container" style="max-width: 680px;">
+    <div class="container" style="max-width:680px;">
       <div class="form-card">
         <h2>Your Testimonial</h2>
         <p>Takes less than 2 minutes. We appreciate you taking the time.</p>
 
-        <form id="testimonial-form" action="https://formspree.io/f/YOUR_NEW_FORM_ID" method="POST">
+        <form id="testimonial-form" action="https://formspree.io/f/xqegredr" method="POST">
           <input type="hidden" name="_subject" value="New Testimonial — Heavenly Hands Contracting" />
 
           <label>Your Full Name</label>
           <input type="text" name="name" placeholder="John Smith" autocomplete="name" required />
 
-          <label>Your Title or Business (optional)</label>
+          <label>Your Title or Business <span style="color:var(--gray-mid); font-weight:400; text-transform:none; letter-spacing:0;">(optional)</span></label>
           <input type="text" name="title" placeholder="e.g. Owner, Green Thumb Landscaping" />
 
           <label>Service You Received</label>
@@ -125,22 +126,22 @@
 
           <label>Your Rating</label>
           <div class="star-rating">
-            <input type="radio" name="rating" id="star5" value="5" required />
-            <label for="star5">★</label>
-            <input type="radio" name="rating" id="star4" value="4" />
-            <label for="star4">★</label>
-            <input type="radio" name="rating" id="star3" value="3" />
-            <label for="star3">★</label>
-            <input type="radio" name="rating" id="star2" value="2" />
-            <label for="star2">★</label>
-            <input type="radio" name="rating" id="star1" value="1" />
-            <label for="star1">★</label>
+            <input type="radio" name="rating" id="star5" value="5 Stars" required />
+            <label for="star5" title="5 stars">★</label>
+            <input type="radio" name="rating" id="star4" value="4 Stars" />
+            <label for="star4" title="4 stars">★</label>
+            <input type="radio" name="rating" id="star3" value="3 Stars" />
+            <label for="star3" title="3 stars">★</label>
+            <input type="radio" name="rating" id="star2" value="2 Stars" />
+            <label for="star2" title="2 stars">★</label>
+            <input type="radio" name="rating" id="star1" value="1 Star" />
+            <label for="star1" title="1 star">★</label>
           </div>
 
           <label>Your Testimonial</label>
           <textarea name="testimonial" rows="6" placeholder="Tell us about your experience — what did we do well, what made the difference, and would you recommend us?" required></textarea>
 
-          <label>Your Email (not published, just for verification)</label>
+          <label>Your Email <span style="color:var(--gray-mid); font-weight:400; text-transform:none; letter-spacing:0;">(not published, just for verification)</span></label>
           <input type="email" name="email" placeholder="your@email.com" autocomplete="email" required />
 
           <button type="submit">Submit My Testimonial →</button>
@@ -186,17 +187,26 @@
         const btn = form.querySelector('button[type="submit"]');
         btn.textContent = 'Submitting...';
         btn.disabled = true;
+
         const response = await fetch(form.action, {
           method: 'POST',
           body: new FormData(form),
           headers: { 'Accept': 'application/json' }
         });
+
         if (response.ok) {
           form.innerHTML = `
-            <div style="text-align:center; padding: 40px 0;">
-              <div style="font-size:3rem; margin-bottom:16px;">✓</div>
-              <h3 style="color:var(--gold-light); margin-bottom:12px;">Thank You!</h3>
-              <p style="color:var(--gray);">Your testimonial has been received. We truly appreciate you taking the time to share your experience.</p>
+            <div style="text-align:center; padding:40px 0;">
+              <div style="
+                width:70px; height:70px;
+                border-radius:50%;
+                background:rgba(201,168,76,0.12);
+                border:2px solid var(--gold);
+                display:flex; align-items:center; justify-content:center;
+                font-size:1.8rem; margin:0 auto 20px;
+              ">✓</div>
+              <h3 style="color:var(--gold-light); margin-bottom:12px; font-family:'Poppins',sans-serif;">Thank You!</h3>
+              <p style="color:var(--gray); line-height:1.8;">Your testimonial has been received.<br />We truly appreciate you sharing your experience.</p>
             </div>
           `;
         } else {
@@ -210,9 +220,12 @@
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.nav-links');
     if (toggle && nav) toggle.addEventListener('click', () => nav.classList.toggle('show'));
+
     const header = document.querySelector('.site-header');
     window.addEventListener('scroll', () => {
-      header.style.background = window.scrollY > 60 ? 'rgba(10,10,10,0.98)' : 'rgba(10,10,10,0.92)';
+      header.style.background = window.scrollY > 60
+        ? 'rgba(10,10,10,0.98)'
+        : 'rgba(10,10,10,0.92)';
     });
   </script>
 
