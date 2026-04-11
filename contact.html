@@ -139,15 +139,9 @@
 
   <a href="quote.html" class="mobile-cta">Get a Free Quote →</a>
 
-  <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
-    // ⚠️ Replace these 3 values after setting up EmailJS
-    const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';
-    const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';
-    const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-
-    emailjs.init(EMAILJS_PUBLIC_KEY);
+    emailjs.init('ooyUlSfr3d2-5lQBk');
 
     const form = document.getElementById('contact-form');
     if (form) {
@@ -166,10 +160,11 @@
 
           if (!formRes.ok) throw new Error('Formspree failed');
 
-          await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+          await emailjs.send('service_xn6jpzv', 'template_ypf56ch', {
             to_name:      form.querySelector('[name="name"]').value,
             to_email:     form.querySelector('[name="email"]').value,
             service_type: form.querySelector('[name="service"]').value || 'General Inquiry',
+            vehicle_type: 'N/A',
           });
 
           window.location.href = 'https://consulting-stack.github.io/Heavenly-Hands/thank-you.html';
