@@ -14,6 +14,26 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Testimonial.to widget overrides ── */
+    #testimonialto-heavenly-hands-contracting {
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .testimonialto-embed iframe {
+      border-radius: 14px !important;
+      background: transparent !important;
+    }
+
+    .testimonial-widget-wrap {
+      background: transparent;
+      padding: 0;
+      margin-top: 8px;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+  </style>
 </head>
 <body>
 
@@ -132,48 +152,51 @@
   <hr class="gold-divider" />
 
   <!-- TESTIMONIALS -->
-  <section class="bg-glow">
+  <section style="
+    padding: 90px 0;
+    background:
+      radial-gradient(ellipse at 15% 60%, rgba(201,168,76,0.07) 0%, transparent 55%),
+      radial-gradient(ellipse at 85% 20%, rgba(201,168,76,0.05) 0%, transparent 50%),
+      #0a0a0a;
+  ">
     <div class="container">
       <div class="section-label">Client Testimonials</div>
       <h2 class="section-title">What Our Clients Say</h2>
       <p class="section-sub">Real feedback from real businesses we've worked with.</p>
 
-      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px;" class="testimonials-grid">
-
-        <!-- TESTIMONIAL 1 — replace when received -->
-        <div class="service-card">
-          <div style="color:var(--gold-light); font-size:1.4rem; margin-bottom:12px; letter-spacing:2px;">★★★★★</div>
-          <p style="color:var(--gray); font-size:0.92rem; line-height:1.8; margin-bottom:20px; font-style:italic;">
-            "Add testimonial quote here once received."
-          </p>
-          <div style="border-top:1px solid rgba(201,168,76,0.15); padding-top:16px;">
-            <strong style="display:block; color:var(--white); font-family:'Poppins',sans-serif; font-size:0.9rem;">Client Name</strong>
-            <span style="color:var(--gold); font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase;">Service Received</span>
-          </div>
+      <div class="testimonial-widget-wrap">
+        <div
+          id='testimonialto-heavenly-hands-contracting'
+          class='testimonialto-embed'
+          data-lang='en'
+          data-theme='dark'
+          data-reviews='all'>
         </div>
+        <script
+          type='text/javascript'
+          src='https://testimonial.to/js/iframeResizer.min.js'>
+        </script>
+      </div>
 
-        <!-- TESTIMONIAL 2 -->
-        <div class="service-card">
-          <div style="color:var(--gold-light); font-size:1.4rem; margin-bottom:12px; letter-spacing:2px;">★★★★★</div>
-          <p style="color:var(--gray); font-size:0.92rem; line-height:1.8; margin-bottom:20px; font-style:italic;">
-            "Add testimonial quote here once received."
-          </p>
-          <div style="border-top:1px solid rgba(201,168,76,0.15); padding-top:16px;">
-            <strong style="display:block; color:var(--white); font-family:'Poppins',sans-serif; font-size:0.9rem;">Client Name</strong>
-            <span style="color:var(--gold); font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase;">Service Received</span>
-          </div>
+      <!-- Shows while widget loads or if no testimonials yet -->
+      <div id="testimonial-placeholder" style="
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 22px;
+        margin-top: 8px;
+      " class="testimonials-grid">
+
+        <div class="service-card" style="text-align:center; padding: 40px 24px;">
+          <div style="font-size:1.8rem; margin-bottom:12px; opacity:0.4;">★★★★★</div>
+          <p style="color:var(--gray-mid); font-size:0.85rem; font-style:italic;">Testimonials loading...</p>
         </div>
-
-        <!-- TESTIMONIAL 3 -->
-        <div class="service-card">
-          <div style="color:var(--gold-light); font-size:1.4rem; margin-bottom:12px; letter-spacing:2px;">★★★★★</div>
-          <p style="color:var(--gray); font-size:0.92rem; line-height:1.8; margin-bottom:20px; font-style:italic;">
-            "Add testimonial quote here once received."
-          </p>
-          <div style="border-top:1px solid rgba(201,168,76,0.15); padding-top:16px;">
-            <strong style="display:block; color:var(--white); font-family:'Poppins',sans-serif; font-size:0.9rem;">Client Name</strong>
-            <span style="color:var(--gold); font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase;">Service Received</span>
-          </div>
+        <div class="service-card" style="text-align:center; padding: 40px 24px;">
+          <div style="font-size:1.8rem; margin-bottom:12px; opacity:0.4;">★★★★★</div>
+          <p style="color:var(--gray-mid); font-size:0.85rem; font-style:italic;">Testimonials loading...</p>
+        </div>
+        <div class="service-card" style="text-align:center; padding: 40px 24px;">
+          <div style="font-size:1.8rem; margin-bottom:12px; opacity:0.4;">★★★★★</div>
+          <p style="color:var(--gray-mid); font-size:0.85rem; font-style:italic;">Testimonials loading...</p>
         </div>
 
       </div>
@@ -271,6 +294,21 @@
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.nav-links');
     if (toggle && nav) toggle.addEventListener('click', () => nav.classList.toggle('show'));
+
+    // Hide placeholder cards once Testimonial.to widget iframe loads
+    const widgetContainer = document.getElementById('testimonialto-heavenly-hands-contracting');
+    const placeholder = document.getElementById('testimonial-placeholder');
+
+    if (widgetContainer && placeholder) {
+      const observer = new MutationObserver(() => {
+        const iframe = widgetContainer.querySelector('iframe');
+        if (iframe) {
+          placeholder.style.display = 'none';
+          observer.disconnect();
+        }
+      });
+      observer.observe(widgetContainer, { childList: true, subtree: true });
+    }
   </script>
 
 </body>
