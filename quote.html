@@ -75,7 +75,7 @@
             </select>
 
             <label>Project Details</label>
-            <textarea name="details" rows="6" placeholder="Describe your project, goals, timeline, and any specific details that would help us understand what you need..." required></textarea>
+            <textarea name="details" rows="6" placeholder="Describe your project, goals, timeline, and any specific details..." required></textarea>
 
             <button type="submit">Submit Quote Request →</button>
           </form>
@@ -176,14 +176,9 @@
 
   <a href="quote.html" class="mobile-cta">Get a Free Quote →</a>
 
-  <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
-    const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';
-    const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';
-    const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-
-    emailjs.init(EMAILJS_PUBLIC_KEY);
+    emailjs.init('ooyUlSfr3d2-5lQBk');
 
     const form = document.getElementById('quote-form');
     if (form) {
@@ -202,7 +197,7 @@
 
           if (!formRes.ok) throw new Error('Formspree failed');
 
-          await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+          await emailjs.send('service_xn6jpzv', 'template_ypf56ch', {
             to_name:      form.querySelector('[name="name"]').value,
             to_email:     form.querySelector('[name="email"]').value,
             service_type: form.querySelector('[name="service"]').value || 'Quote Request',
