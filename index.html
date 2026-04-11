@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Heavenly Hands Contracting | Building Dreams · Delivering Excellence</title>
   <meta name="description" content="Heavenly Hands Contracting — custom vehicle branding, mobile business builds, food trucks, fleet graphics, and contracting services. Est. 1992." />
+  <meta property="og:title" content="Heavenly Hands Contracting | Building Dreams · Delivering Excellence" />
+  <meta property="og:description" content="Custom vehicle wraps, food truck builds, mobile business builds, and full-scale contracting. Est. 1992." />
+  <meta property="og:image" content="https://consulting-stack.github.io/Heavenly-Hands/logo.png" />
+  <meta property="og:url" content="https://consulting-stack.github.io/Heavenly-Hands/" />
+  <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -126,8 +131,59 @@
 
   <hr class="gold-divider" />
 
-  <!-- PORTFOLIO -->
+  <!-- TESTIMONIALS -->
   <section class="bg-glow">
+    <div class="container">
+      <div class="section-label">Client Testimonials</div>
+      <h2 class="section-title">What Our Clients Say</h2>
+      <p class="section-sub">Real feedback from real businesses we've worked with.</p>
+
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px;" class="testimonials-grid">
+
+        <!-- TESTIMONIAL 1 — replace when received -->
+        <div class="service-card">
+          <div style="color:var(--gold-light); font-size:1.4rem; margin-bottom:12px; letter-spacing:2px;">★★★★★</div>
+          <p style="color:var(--gray); font-size:0.92rem; line-height:1.8; margin-bottom:20px; font-style:italic;">
+            "Add testimonial quote here once received."
+          </p>
+          <div style="border-top:1px solid rgba(201,168,76,0.15); padding-top:16px;">
+            <strong style="display:block; color:var(--white); font-family:'Poppins',sans-serif; font-size:0.9rem;">Client Name</strong>
+            <span style="color:var(--gold); font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase;">Service Received</span>
+          </div>
+        </div>
+
+        <!-- TESTIMONIAL 2 -->
+        <div class="service-card">
+          <div style="color:var(--gold-light); font-size:1.4rem; margin-bottom:12px; letter-spacing:2px;">★★★★★</div>
+          <p style="color:var(--gray); font-size:0.92rem; line-height:1.8; margin-bottom:20px; font-style:italic;">
+            "Add testimonial quote here once received."
+          </p>
+          <div style="border-top:1px solid rgba(201,168,76,0.15); padding-top:16px;">
+            <strong style="display:block; color:var(--white); font-family:'Poppins',sans-serif; font-size:0.9rem;">Client Name</strong>
+            <span style="color:var(--gold); font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase;">Service Received</span>
+          </div>
+        </div>
+
+        <!-- TESTIMONIAL 3 -->
+        <div class="service-card">
+          <div style="color:var(--gold-light); font-size:1.4rem; margin-bottom:12px; letter-spacing:2px;">★★★★★</div>
+          <p style="color:var(--gray); font-size:0.92rem; line-height:1.8; margin-bottom:20px; font-style:italic;">
+            "Add testimonial quote here once received."
+          </p>
+          <div style="border-top:1px solid rgba(201,168,76,0.15); padding-top:16px;">
+            <strong style="display:block; color:var(--white); font-family:'Poppins',sans-serif; font-size:0.9rem;">Client Name</strong>
+            <span style="color:var(--gold); font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase;">Service Received</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="gold-divider" />
+
+  <!-- PORTFOLIO -->
+  <section class="bg-dots">
     <div class="container">
       <div class="section-label">Our Work</div>
       <h2 class="section-title">Built to Last.<br />Designed to Impress.</h2>
@@ -176,20 +232,18 @@
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
-        <p>
-          Phone: <a href="tel:+18327204079" style="color:inherit;">(832) 720-4079</a><br />
-          Email: info@heavenlyhandscustomdesigns.com
-        </p>
+        <p>Email: info@heavenlyhandscustomdesigns.com</p>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Heavenly Hands Contracting. All rights reserved.</p>
+      <p>© 2026 Heavenly Hands Contracting. All rights reserved.</p>
     </div>
   </footer>
 
   <a href="quote.html" class="mobile-cta">Get a Free Quote →</a>
 
   <script>
+    // Slideshow
     const slides = document.querySelectorAll('.hero-slide');
     const dots = document.querySelectorAll('.slide-dot');
     let current = 0;
@@ -205,14 +259,19 @@
     dots.forEach(dot => dot.addEventListener('click', () => goTo(parseInt(dot.dataset.index))));
     setInterval(() => goTo((current + 1) % slides.length), 5000);
 
+    // Navbar scroll
     const header = document.querySelector('.site-header');
     window.addEventListener('scroll', () => {
-      header.style.background = window.scrollY > 60 ? 'rgba(10,10,10,0.98)' : 'rgba(10,10,10,0.92)';
+      header.style.background = window.scrollY > 60
+        ? 'rgba(10,10,10,0.98)'
+        : 'rgba(10,10,10,0.92)';
     });
 
+    // Mobile menu
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.nav-links');
     if (toggle && nav) toggle.addEventListener('click', () => nav.classList.toggle('show'));
   </script>
+
 </body>
 </html>
