@@ -14,26 +14,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <style>
-    /* ── Testimonial.to widget overrides ── */
-    #testimonialto-heavenly-hands-contracting {
-      border-radius: 14px;
-      overflow: hidden;
-    }
-
-    .testimonialto-embed iframe {
-      border-radius: 14px !important;
-      background: transparent !important;
-    }
-
-    .testimonial-widget-wrap {
-      background: transparent;
-      padding: 0;
-      margin-top: 8px;
-      border-radius: 14px;
-      overflow: hidden;
-    }
-  </style>
 </head>
 <body>
 
@@ -54,7 +34,6 @@
     </nav>
   </header>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-slide active"></div>
     <div class="hero-slide"></div>
@@ -76,166 +55,68 @@
     </div>
   </section>
 
-  <!-- STATS -->
   <div class="stats-bar">
     <div class="stats-grid">
-      <div>
-        <span class="stat-number">30+</span>
-        <span class="stat-label">Years in Business</span>
-      </div>
-      <div>
-        <span class="stat-number">500+</span>
-        <span class="stat-label">Projects Completed</span>
-      </div>
-      <div>
-        <span class="stat-number">100%</span>
-        <span class="stat-label">Custom Work</span>
-      </div>
-      <div>
-        <span class="stat-number">8</span>
-        <span class="stat-label">Service Categories</span>
-      </div>
+      <div><span class="stat-number">30+</span><span class="stat-label">Years in Business</span></div>
+      <div><span class="stat-number">500+</span><span class="stat-label">Projects Completed</span></div>
+      <div><span class="stat-number">100%</span><span class="stat-label">Custom Work</span></div>
+      <div><span class="stat-number">8</span><span class="stat-label">Service Categories</span></div>
     </div>
   </div>
 
-  <!-- SERVICES -->
   <section class="bg-dots">
     <div class="container">
       <div class="section-label">What We Do</div>
       <h2 class="section-title">One Company.<br />Every Solution.</h2>
       <p class="section-sub">Custom design meets heavy-duty contracting. Whether it's a wrap, a build, or a full project — we handle it all under one roof.</p>
       <div class="services-grid">
-        <div class="service-card">
-          <span class="service-icon">🎨</span>
-          <h3>Vehicle Wraps & Graphics</h3>
-          <p>Full and partial wraps that turn every vehicle into a moving billboard for your brand.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-icon">🚚</span>
-          <h3>Food Truck Builds</h3>
-          <p>Complete food truck design and construction — from concept through street-ready delivery.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-icon">🏗️</span>
-          <h3>Mobile Business Builds</h3>
-          <p>Custom mobile showrooms, service rigs, and trade vehicles built for real-world function.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-icon">🚛</span>
-          <h3>Fleet Branding</h3>
-          <p>Unified, professional branding across your entire fleet — consistent and scalable.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-icon">🔨</span>
-          <h3>General Contracting</h3>
-          <p>Full-scope construction and contracting services delivered with the same standard of excellence as everything else we build.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-icon">📐</span>
-          <h3>Interior Layout Design</h3>
-          <p>Precision interior planning that maximizes space, workflow, and professionalism in every build.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-icon">🚜</span>
-          <h3>Equipment & Hauling</h3>
-          <p>Heavy equipment operation and hauling services to support your project from the ground up.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-icon">💡</span>
-          <h3>Custom Concepts</h3>
-          <p>If you can imagine it, we can build it. No template. No shortcuts. Just results.</p>
-        </div>
+        <div class="service-card"><span class="service-icon">🎨</span><h3>Vehicle Wraps & Graphics</h3><p>Full and partial wraps that turn every vehicle into a moving billboard for your brand.</p></div>
+        <div class="service-card"><span class="service-icon">🚚</span><h3>Food Truck Builds</h3><p>Complete food truck design and construction — from concept through street-ready delivery.</p></div>
+        <div class="service-card"><span class="service-icon">🏗️</span><h3>Mobile Business Builds</h3><p>Custom mobile showrooms, service rigs, and trade vehicles built for real-world function.</p></div>
+        <div class="service-card"><span class="service-icon">🚛</span><h3>Fleet Branding</h3><p>Unified, professional branding across your entire fleet — consistent and scalable.</p></div>
+        <div class="service-card"><span class="service-icon">🔨</span><h3>General Contracting</h3><p>Full-scope construction and contracting services delivered with the same standard of excellence.</p></div>
+        <div class="service-card"><span class="service-icon">📐</span><h3>Interior Layout Design</h3><p>Precision interior planning that maximizes space, workflow, and professionalism in every build.</p></div>
+        <div class="service-card"><span class="service-icon">🚜</span><h3>Equipment & Hauling</h3><p>Heavy equipment operation and hauling services to support your project from the ground up.</p></div>
+        <div class="service-card"><span class="service-icon">💡</span><h3>Custom Concepts</h3><p>If you can imagine it, we can build it. No template. No shortcuts. Just results.</p></div>
       </div>
     </div>
   </section>
 
   <hr class="gold-divider" />
 
-  <!-- TESTIMONIALS -->
-  <section style="
-    padding: 90px 0;
-    background:
-      radial-gradient(ellipse at 15% 60%, rgba(201,168,76,0.07) 0%, transparent 55%),
-      radial-gradient(ellipse at 85% 20%, rgba(201,168,76,0.05) 0%, transparent 50%),
-      #0a0a0a;
-  ">
+  <section style="padding:90px 0;background:radial-gradient(ellipse at 15% 60%,rgba(201,168,76,.07) 0%,transparent 55%),radial-gradient(ellipse at 85% 20%,rgba(201,168,76,.05) 0%,transparent 50%),#0a0a0a;">
     <div class="container">
       <div class="section-label">Client Testimonials</div>
       <h2 class="section-title">What Our Clients Say</h2>
       <p class="section-sub">Real feedback from real businesses we've worked with.</p>
-
-      <div class="testimonial-widget-wrap">
-        <div
-          id='testimonialto-heavenly-hands-contracting'
-          class='testimonialto-embed'
-          data-lang='en'
-          data-theme='dark'
-          data-reviews='all'>
-        </div>
-        <script
-          type='text/javascript'
-          src='https://testimonial.to/js/iframeResizer.min.js'>
-        </script>
-      </div>
-
-      <!-- Shows while widget loads or if no testimonials yet -->
-      <div id="testimonial-placeholder" style="
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-        gap: 22px;
-        margin-top: 8px;
-      " class="testimonials-grid">
-
-        <div class="service-card" style="text-align:center; padding: 40px 24px;">
-          <div style="font-size:1.8rem; margin-bottom:12px; opacity:0.4;">★★★★★</div>
-          <p style="color:var(--gray-mid); font-size:0.85rem; font-style:italic;">Testimonials loading...</p>
-        </div>
-        <div class="service-card" style="text-align:center; padding: 40px 24px;">
-          <div style="font-size:1.8rem; margin-bottom:12px; opacity:0.4;">★★★★★</div>
-          <p style="color:var(--gray-mid); font-size:0.85rem; font-style:italic;">Testimonials loading...</p>
-        </div>
-        <div class="service-card" style="text-align:center; padding: 40px 24px;">
-          <div style="font-size:1.8rem; margin-bottom:12px; opacity:0.4;">★★★★★</div>
-          <p style="color:var(--gray-mid); font-size:0.85rem; font-style:italic;">Testimonials loading...</p>
-        </div>
-
+      <div>
+        <div id='testimonialto-heavenly-hands-contracting' class='testimonialto-embed' data-lang='en' data-theme='dark' data-reviews='all'></div>
+        <script type='text/javascript' src='https://testimonial.to/js/iframeResizer.min.js'></script>
       </div>
     </div>
   </section>
 
   <hr class="gold-divider" />
 
-  <!-- PORTFOLIO -->
   <section class="bg-dots">
     <div class="container">
       <div class="section-label">Our Work</div>
       <h2 class="section-title">Built to Last.<br />Designed to Impress.</h2>
       <p class="section-sub">A look at vehicles and projects we've built, wrapped, and branded.</p>
       <div class="portfolio-grid">
-        <div class="portfolio-item">
-          <img src="van-1.jpg" alt="Custom vehicle wrap" />
-          <div class="portfolio-overlay"><span>Vehicle Wrap</span></div>
-        </div>
-        <div class="portfolio-item">
-          <img src="van-2.jpg" alt="Fleet branding" />
-          <div class="portfolio-overlay"><span>Fleet Branding</span></div>
-        </div>
-        <div class="portfolio-item">
-          <img src="van-3.jpg" alt="Custom graphics" />
-          <div class="portfolio-overlay"><span>Custom Graphics</span></div>
-        </div>
+        <div class="portfolio-item"><img src="van-1.jpg" alt="Custom vehicle wrap" /><div class="portfolio-overlay"><span>Vehicle Wrap</span></div></div>
+        <div class="portfolio-item"><img src="van-2.jpg" alt="Fleet branding" /><div class="portfolio-overlay"><span>Fleet Branding</span></div></div>
+        <div class="portfolio-item"><img src="van-3.jpg" alt="Custom graphics" /><div class="portfolio-overlay"><span>Custom Graphics</span></div></div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="cta-band">
     <h2>Ready to Build Something Great?</h2>
     <p>Tell us about your project and we'll put together a plan that gets it done right.</p>
     <a href="quote.html" class="btn-primary">Request a Free Quote</a>
   </section>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-grid">
       <div class="footer-brand">
@@ -258,19 +139,37 @@
         <p>Email: info@heavenlyhandscustomdesigns.com</p>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 Heavenly Hands Contracting. All rights reserved.</p>
-    </div>
+    <div class="footer-bottom"><p>© 2026 Heavenly Hands Contracting. All rights reserved.</p></div>
   </footer>
 
   <a href="quote.html" class="mobile-cta">Get a Free Quote →</a>
 
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  Tawk_API.onLoad = function() {
+    Tawk_API.customStyle = {
+      visibility: {
+        desktop: { position: 'br', xOffset: 20, yOffset: 20 },
+        mobile:  { position: 'br', xOffset: 10, yOffset: 65 }
+      }
+    };
+  };
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/69d9dc284d80b21c34bff088/1jltg7vc4';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
+
   <script>
-    // Slideshow
     const slides = document.querySelectorAll('.hero-slide');
     const dots = document.querySelectorAll('.slide-dot');
     let current = 0;
-
     function goTo(index) {
       slides[current].classList.remove('active');
       dots[current].classList.remove('active');
@@ -278,38 +177,15 @@
       slides[current].classList.add('active');
       dots[current].classList.add('active');
     }
-
     dots.forEach(dot => dot.addEventListener('click', () => goTo(parseInt(dot.dataset.index))));
     setInterval(() => goTo((current + 1) % slides.length), 5000);
-
-    // Navbar scroll
     const header = document.querySelector('.site-header');
     window.addEventListener('scroll', () => {
-      header.style.background = window.scrollY > 60
-        ? 'rgba(10,10,10,0.98)'
-        : 'rgba(10,10,10,0.92)';
+      header.style.background = window.scrollY > 60 ? 'rgba(10,10,10,0.98)' : 'rgba(10,10,10,0.92)';
     });
-
-    // Mobile menu
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.nav-links');
     if (toggle && nav) toggle.addEventListener('click', () => nav.classList.toggle('show'));
-
-    // Hide placeholder cards once Testimonial.to widget iframe loads
-    const widgetContainer = document.getElementById('testimonialto-heavenly-hands-contracting');
-    const placeholder = document.getElementById('testimonial-placeholder');
-
-    if (widgetContainer && placeholder) {
-      const observer = new MutationObserver(() => {
-        const iframe = widgetContainer.querySelector('iframe');
-        if (iframe) {
-          placeholder.style.display = 'none';
-          observer.disconnect();
-        }
-      });
-      observer.observe(widgetContainer, { childList: true, subtree: true });
-    }
   </script>
-
 </body>
 </html>
