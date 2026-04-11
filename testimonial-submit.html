@@ -9,72 +9,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <style>
-    .star-rating {
-      display: flex;
-      flex-direction: row-reverse;
-      justify-content: flex-end;
-      gap: 8px;
-      margin-bottom: 8px;
-    }
-    .star-rating input { display: none; }
-    .star-rating label {
-      font-size: 2rem;
-      color: rgba(201,168,76,0.3);
-      cursor: pointer;
-      transition: color 0.2s;
-      margin: 0;
-      text-transform: none;
-      letter-spacing: 0;
-      font-family: Arial, sans-serif;
-      font-weight: 400;
-    }
-    .star-rating input:checked ~ label,
-    .star-rating label:hover,
-    .star-rating label:hover ~ label,
-    .star-rating input:checked + label {
-      color: var(--gold-light);
-    }
-    .testimonial-hero {
-      text-align: center;
-      padding: 140px 5% 60px;
-      background:
-        radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.1) 0%, transparent 60%),
-        var(--black);
-      border-bottom: 1px solid var(--border);
-      position: relative;
-    }
-    .testimonial-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(rgba(201,168,76,0.07) 1px, transparent 1px);
-      background-size: 28px 28px;
-      pointer-events: none;
-    }
-    .testimonial-hero-content { position: relative; z-index: 1; }
-    .testimonial-hero h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 16px; }
-    .testimonial-hero p {
-      color: var(--gray);
-      font-size: 1.05rem;
-      max-width: 520px;
-      margin: 0 auto;
-      line-height: 1.8;
-    }
-    .quote-icon {
-      font-size: 3rem;
-      color: var(--gold);
-      margin-bottom: 16px;
-      display: block;
-    }
+    .star-rating { display:flex; flex-direction:row-reverse; justify-content:flex-end; gap:8px; margin-bottom:8px; }
+    .star-rating input { display:none; }
+    .star-rating label { font-size:2rem; color:rgba(201,168,76,0.3); cursor:pointer; transition:color 0.2s; margin:0; text-transform:none; letter-spacing:0; font-family:Arial,sans-serif; font-weight:400; }
+    .star-rating input:checked ~ label, .star-rating label:hover, .star-rating label:hover ~ label, .star-rating input:checked + label { color:var(--gold-light); }
+    .testimonial-hero { text-align:center; padding:140px 5% 60px; background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.1) 0%,transparent 60%),var(--black); border-bottom:1px solid var(--border); position:relative; }
+    .testimonial-hero::before { content:''; position:absolute; inset:0; background-image:radial-gradient(rgba(201,168,76,.07) 1px,transparent 1px); background-size:28px 28px; pointer-events:none; }
+    .testimonial-hero-content { position:relative; z-index:1; }
+    .testimonial-hero h1 { font-size:clamp(2rem,5vw,3rem); margin-bottom:16px; }
+    .testimonial-hero p { color:var(--gray); font-size:1.05rem; max-width:520px; margin:0 auto; line-height:1.8; }
+    .quote-icon { font-size:3rem; color:var(--gold); margin-bottom:16px; display:block; }
   </style>
 </head>
 <body>
 
   <header class="site-header">
     <nav class="navbar">
-      <a href="index.html">
-        <img src="logo.png" alt="Heavenly Hands Contracting" class="logo-img" />
-      </a>
+      <a href="index.html"><img src="logo.png" alt="Heavenly Hands Contracting" class="logo-img" /></a>
       <button class="menu-toggle" type="button">☰</button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -101,16 +52,12 @@
       <div class="form-card">
         <h2>Your Testimonial</h2>
         <p>Takes less than 2 minutes. We appreciate you taking the time.</p>
-
         <form id="testimonial-form" action="https://formspree.io/f/xqegredr" method="POST">
           <input type="hidden" name="_subject" value="New Testimonial — Heavenly Hands Contracting" />
-
           <label>Your Full Name</label>
           <input type="text" name="name" placeholder="John Smith" autocomplete="name" required />
-
-          <label>Your Title or Business <span style="color:var(--gray-mid); font-weight:400; text-transform:none; letter-spacing:0;">(optional)</span></label>
+          <label>Your Title or Business <span style="color:var(--gray-mid);font-weight:400;text-transform:none;letter-spacing:0;">(optional)</span></label>
           <input type="text" name="title" placeholder="e.g. Owner, Green Thumb Landscaping" />
-
           <label>Service You Received</label>
           <select name="service" required>
             <option value="">Select the service</option>
@@ -123,7 +70,6 @@
             <option>Equipment Operation & Hauling</option>
             <option>Custom Design Concepts</option>
           </select>
-
           <label>Your Rating</label>
           <div class="star-rating">
             <input type="radio" name="rating" id="star5" value="5 Stars" required />
@@ -137,13 +83,10 @@
             <input type="radio" name="rating" id="star1" value="1 Star" />
             <label for="star1" title="1 star">★</label>
           </div>
-
           <label>Your Testimonial</label>
           <textarea name="testimonial" rows="6" placeholder="Tell us about your experience — what did we do well, what made the difference, and would you recommend us?" required></textarea>
-
-          <label>Your Email <span style="color:var(--gray-mid); font-weight:400; text-transform:none; letter-spacing:0;">(not published, just for verification)</span></label>
+          <label>Your Email <span style="color:var(--gray-mid);font-weight:400;text-transform:none;letter-spacing:0;">(not published, just for verification)</span></label>
           <input type="email" name="email" placeholder="your@email.com" autocomplete="email" required />
-
           <button type="submit">Submit My Testimonial →</button>
         </form>
       </div>
@@ -172,12 +115,32 @@
         <p>Email: info@heavenlyhandscustomdesigns.com</p>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 Heavenly Hands Contracting. All rights reserved.</p>
-    </div>
+    <div class="footer-bottom"><p>© 2026 Heavenly Hands Contracting. All rights reserved.</p></div>
   </footer>
 
   <a href="quote.html" class="mobile-cta">Get a Free Quote →</a>
+
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  Tawk_API.onLoad = function() {
+    Tawk_API.customStyle = {
+      visibility: {
+        desktop: { position: 'br', xOffset: 20, yOffset: 20 },
+        mobile:  { position: 'br', xOffset: 10, yOffset: 65 }
+      }
+    };
+  };
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/69d9dc284d80b21c34bff088/1jltg7vc4';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
 
   <script>
     const form = document.getElementById('testimonial-form');
@@ -187,28 +150,14 @@
         const btn = form.querySelector('button[type="submit"]');
         btn.textContent = 'Submitting...';
         btn.disabled = true;
-
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-
+        const response = await fetch(form.action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} });
         if (response.ok) {
           form.innerHTML = `
-            <div style="text-align:center; padding:40px 0;">
-              <div style="
-                width:70px; height:70px;
-                border-radius:50%;
-                background:rgba(201,168,76,0.12);
-                border:2px solid var(--gold);
-                display:flex; align-items:center; justify-content:center;
-                font-size:1.8rem; margin:0 auto 20px;
-              ">✓</div>
-              <h3 style="color:var(--gold-light); margin-bottom:12px; font-family:'Poppins',sans-serif;">Thank You!</h3>
-              <p style="color:var(--gray); line-height:1.8;">Your testimonial has been received.<br />We truly appreciate you sharing your experience.</p>
-            </div>
-          `;
+            <div style="text-align:center;padding:40px 0;">
+              <div style="width:70px;height:70px;border-radius:50%;background:rgba(201,168,76,0.12);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 20px;">✓</div>
+              <h3 style="color:var(--gold-light);margin-bottom:12px;font-family:'Poppins',sans-serif;">Thank You!</h3>
+              <p style="color:var(--gray);line-height:1.8;">Your testimonial has been received.<br />We truly appreciate you sharing your experience.</p>
+            </div>`;
         } else {
           alert('Something went wrong. Please try again.');
           btn.textContent = 'Submit My Testimonial →';
@@ -216,18 +165,13 @@
         }
       });
     }
-
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.nav-links');
     if (toggle && nav) toggle.addEventListener('click', () => nav.classList.toggle('show'));
-
     const header = document.querySelector('.site-header');
     window.addEventListener('scroll', () => {
-      header.style.background = window.scrollY > 60
-        ? 'rgba(10,10,10,0.98)'
-        : 'rgba(10,10,10,0.92)';
+      header.style.background = window.scrollY > 60 ? 'rgba(10,10,10,0.98)' : 'rgba(10,10,10,0.92)';
     });
   </script>
-
 </body>
 </html>
