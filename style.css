@@ -956,3 +956,8 @@ section { padding: 90px 0; }
   .mobile-cta { display: block; }
   .site-footer { padding-bottom: 80px; }
 }
+@media (max-width: 768px) {
+  .thankyou-steps {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
