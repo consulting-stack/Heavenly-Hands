@@ -52,7 +52,7 @@
       color: var(--gray);
       letter-spacing: 0.05em;
       transition: all 0.3s ease;
-      cursor: default;
+      cursor: pointer;
     }
 
     .city-pill.active {
@@ -61,7 +61,6 @@
       color: var(--gold-light);
     }
 
-    /* Override Leaflet default popup styles */
     .leaflet-popup-content-wrapper {
       background: #161616 !important;
       border: 1px solid rgba(201,168,76,0.35) !important;
@@ -70,13 +69,8 @@
       color: #F8F8F8 !important;
     }
 
-    .leaflet-popup-tip {
-      background: #161616 !important;
-    }
-
-    .leaflet-popup-content {
-      margin: 14px 18px !important;
-    }
+    .leaflet-popup-tip { background: #161616 !important; }
+    .leaflet-popup-content { margin: 14px 18px !important; }
 
     .map-popup-title {
       font-family: 'Poppins', sans-serif;
@@ -97,9 +91,7 @@
       color: #555 !important;
     }
 
-    .leaflet-control-attribution a {
-      color: #777 !important;
-    }
+    .leaflet-control-attribution a { color: #777 !important; }
 
     .leaflet-control-zoom a {
       background: #161616 !important;
@@ -107,9 +99,7 @@
       border-color: rgba(201,168,76,0.25) !important;
     }
 
-    .leaflet-control-zoom a:hover {
-      background: #222 !important;
-    }
+    .leaflet-control-zoom a:hover { background: #222 !important; }
   </style>
 </head>
 <body>
@@ -216,13 +206,13 @@
     <div class="container">
       <div class="section-label">Service Area</div>
       <h2 class="section-title">Where We Work</h2>
-      <p class="section-sub" style="margin-bottom: 24px;">We serve businesses across Texas and Mississippi. If you're in or near any of these cities — we've got you covered.</p>
+      <p class="section-sub" style="margin-bottom:24px;">We serve businesses across Texas and Mississippi. If you're in or near any of these cities — we've got you covered.</p>
 
       <div class="city-ticker" id="city-ticker">
         <span class="city-ticker-label">Now Viewing:</span>
       </div>
 
-      <div style="margin-top: 20px;">
+      <div style="margin-top:20px;">
         <div id="service-map"></div>
       </div>
     </div>
@@ -264,24 +254,22 @@
 
     // ── SERVICE AREA CITIES ──
     const serviceAreas = [
-      // TEXAS
-      { name: 'Houston, TX',       lat: 29.7604, lng: -95.3698, state: 'Texas',       zoom: 11 },
-      { name: 'Dallas, TX',        lat: 32.7767, lng: -96.7970, state: 'Texas',       zoom: 11 },
-      { name: 'San Antonio, TX',   lat: 29.4241, lng: -98.4936, state: 'Texas',       zoom: 11 },
-      { name: 'Austin, TX',        lat: 30.2672, lng: -97.7431, state: 'Texas',       zoom: 11 },
-      { name: 'Fort Worth, TX',    lat: 32.7555, lng: -97.3308, state: 'Texas',       zoom: 11 },
-      { name: 'Beaumont, TX',      lat: 30.0802, lng: -94.1266, state: 'Texas',       zoom: 12 },
-      { name: 'Corpus Christi, TX',lat: 27.8006, lng: -97.3964, state: 'Texas',       zoom: 11 },
-      { name: 'Tyler, TX',         lat: 32.3513, lng: -95.3011, state: 'Texas',       zoom: 12 },
-      { name: 'Port Arthur, TX',   lat: 29.8849, lng: -93.9399, state: 'Texas',       zoom: 12 },
-      { name: 'Nacogdoches, TX',   lat: 31.6035, lng: -94.6552, state: 'Texas',       zoom: 12 },
-      // MISSISSIPPI
-      { name: 'Jackson, MS',       lat: 32.2988, lng: -90.1848, state: 'Mississippi', zoom: 11 },
-      { name: 'Gulfport, MS',      lat: 30.3674, lng: -89.0928, state: 'Mississippi', zoom: 12 },
-      { name: 'Biloxi, MS',        lat: 30.3960, lng: -88.8853, state: 'Mississippi', zoom: 12 },
-      { name: 'Hattiesburg, MS',   lat: 31.3271, lng: -89.2903, state: 'Mississippi', zoom: 12 },
-      { name: 'Pascagoula, MS',    lat: 30.3457, lng: -88.5562, state: 'Mississippi', zoom: 12 },
-      { name: 'Meridian, MS',      lat: 32.3643, lng: -88.7037, state: 'Mississippi', zoom: 12 },
+      { name: 'Houston, TX',        lat: 29.7604, lng: -95.3698, zoom: 11 },
+      { name: 'Dallas, TX',         lat: 32.7767, lng: -96.7970, zoom: 11 },
+      { name: 'San Antonio, TX',    lat: 29.4241, lng: -98.4936, zoom: 11 },
+      { name: 'Austin, TX',         lat: 30.2672, lng: -97.7431, zoom: 11 },
+      { name: 'Fort Worth, TX',     lat: 32.7555, lng: -97.3308, zoom: 11 },
+      { name: 'Beaumont, TX',       lat: 30.0802, lng: -94.1266, zoom: 12 },
+      { name: 'Corpus Christi, TX', lat: 27.8006, lng: -97.3964, zoom: 11 },
+      { name: 'Tyler, TX',          lat: 32.3513, lng: -95.3011, zoom: 12 },
+      { name: 'Port Arthur, TX',    lat: 29.8849, lng: -93.9399, zoom: 12 },
+      { name: 'Nacogdoches, TX',    lat: 31.6035, lng: -94.6552, zoom: 12 },
+      { name: 'Jackson, MS',        lat: 32.2988, lng: -90.1848, zoom: 11 },
+      { name: 'Gulfport, MS',       lat: 30.3674, lng: -89.0928, zoom: 12 },
+      { name: 'Biloxi, MS',         lat: 30.3960, lng: -88.8853, zoom: 12 },
+      { name: 'Hattiesburg, MS',    lat: 31.3271, lng: -89.2903, zoom: 12 },
+      { name: 'Pascagoula, MS',     lat: 30.3457, lng: -88.5562, zoom: 12 },
+      { name: 'Meridian, MS',       lat: 32.3643, lng: -88.7037, zoom: 12 },
     ];
 
     // ── INIT MAP ──
@@ -292,26 +280,25 @@
       scrollWheelZoom: false,
     });
 
-    // Dark tile layer — no API key needed
     L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
       attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> © <a href="https://carto.com/">CARTO</a>',
       subdomains: 'abcd',
       maxZoom: 19
     }).addTo(map);
 
-    // Custom gold marker
+    // Gold marker
     const goldIcon = L.divIcon({
       className: '',
       html: `<div style="
-        width: 14px; height: 14px;
-        background: #C9A84C;
-        border: 2px solid #F0C040;
-        border-radius: 50%;
-        box-shadow: 0 0 10px rgba(201,168,76,0.6);
+        width:14px;height:14px;
+        background:#C9A84C;
+        border:2px solid #F0C040;
+        border-radius:50%;
+        box-shadow:0 0 10px rgba(201,168,76,0.7);
       "></div>`,
-      iconSize: [14, 14],
-      iconAnchor: [7, 7],
-      popupAnchor: [0, -10],
+      iconSize: [14,14],
+      iconAnchor: [7,7],
+      popupAnchor: [0,-10],
     });
 
     // Add all markers
@@ -334,49 +321,57 @@
       ticker.appendChild(pill);
     });
 
-    // ── ANIMATION LOOP ──
+    // ── FLY TO CITY ──
     let currentIndex = 0;
-    let currentPopup = null;
+    let paused = false;
 
     function flyToCity(index) {
-      // Remove active from all pills
       document.querySelectorAll('.city-pill').forEach(p => p.classList.remove('active'));
-      document.getElementById(`pill-${index}`).classList.add('active');
+      const pill = document.getElementById(`pill-${index}`);
+      if (pill) pill.classList.add('active');
 
       const city = serviceAreas[index];
+      map.closePopup();
 
-      // Close previous popup
-      if (currentPopup) map.closePopup(currentPopup);
-
-      // Fly to city
       map.flyTo([city.lat, city.lng], city.zoom, {
-        duration: 1.8,
-        easeLinearity: 0.4
+        duration: 1.6,
+        easeLinearity: 0.35
       });
 
-      // Open popup after fly
       setTimeout(() => {
-        currentPopup = markers[index].openPopup();
-      }, 1900);
+        if (!paused) markers[index].openPopup();
+      }, 1700);
     }
 
-    // Start animation
-    flyToCity(0);
+    // Start on first city after short delay
+    setTimeout(() => flyToCity(0), 500);
 
-    const cityInterval = setInterval(() => {
+    // ── ANIMATION LOOP ──
+    // FIX: dragstart instead of mousedown — flyTo was triggering
+    // its own mousedown events and killing the interval after city 1
+    setInterval(() => {
+      if (paused) return;
       currentIndex = (currentIndex + 1) % serviceAreas.length;
 
-      // Every time we've gone through all cities, zoom out to overview first
       if (currentIndex === 0) {
         map.flyTo([31.0, -94.5], 6, { duration: 2 });
-        setTimeout(() => flyToCity(currentIndex), 2500);
+        setTimeout(() => { if (!paused) flyToCity(0); }, 2500);
       } else {
         flyToCity(currentIndex);
       }
-    }, 4000);
+    }, 4500);
 
-    // Pause animation on user interaction
-    map.on('mousedown touchstart', () => clearInterval(cityInterval));
+    // Only pause on intentional user drag
+    map.on('dragstart', () => { paused = true; });
+
+    // Click a pill to jump to that city and resume
+    document.querySelectorAll('.city-pill').forEach((pill, i) => {
+      pill.addEventListener('click', () => {
+        paused = false;
+        currentIndex = i;
+        flyToCity(i);
+      });
+    });
 
     // ── CONTACT FORM ──
     emailjs.init('ooyUlSfr3d2-5lQBk');
