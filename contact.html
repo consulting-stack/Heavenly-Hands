@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Heavenly Hands Custom Designs</title>
+  <title>Contact | Heavenly Hands Contracting</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
   <header class="site-header">
     <nav class="navbar">
       <a href="index.html">
-        <img src="logo.png" alt="Heavenly Hands Custom Designs" class="logo-img" />
+        <img src="logo.png" alt="Heavenly Hands Contracting" class="logo-img" />
       </a>
       <button class="menu-toggle" type="button">☰</button>
       <ul class="nav-links">
@@ -39,30 +39,33 @@
   <section class="bg-dots">
     <div class="container">
       <div class="contact-layout">
+
         <div class="form-card">
           <h2>Send a Message</h2>
           <p>Fill out the form and we'll get back to you with next steps.</p>
           <form id="contact-form" action="https://formspree.io/f/mkoplagk" method="POST">
-            <input type="hidden" name="_subject" value="New Contact - Heavenly Hands" />
+            <input type="hidden" name="_subject" value="New Contact — Heavenly Hands Contracting" />
             <input type="hidden" name="_next" value="https://consulting-stack.github.io/Heavenly-Hands/thank-you.html" />
             <label>Full Name</label>
-            <input type="text" name="name" placeholder="Your name" required />
+            <input type="text" name="name" placeholder="Your full name" autocomplete="name" required />
             <label>Email Address</label>
-            <input type="email" name="email" placeholder="your@email.com" required />
+            <input type="email" name="email" placeholder="your@email.com" autocomplete="email" required />
             <label>Phone Number</label>
-            <input type="tel" name="phone" placeholder="(000) 000-0000" />
+            <input type="tel" name="phone" placeholder="(000) 000-0000" autocomplete="tel" />
             <label>Service Needed</label>
             <select name="service" required>
               <option value="">Select a service</option>
-              <option>Wraps & Graphics</option>
+              <option>Vehicle Wraps & Graphics</option>
               <option>Food Truck Design & Builds</option>
               <option>Mobile Business Builds</option>
               <option>Interior Layout Design</option>
               <option>Fleet Branding</option>
+              <option>General Contracting</option>
+              <option>Equipment Operation & Hauling</option>
               <option>Custom Design Concepts</option>
             </select>
             <label>Message</label>
-            <textarea name="message" rows="5" placeholder="Tell us about your vehicle and what you have in mind..." required></textarea>
+            <textarea name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
             <button type="submit">Send Message</button>
           </form>
         </div>
@@ -74,7 +77,7 @@
             <span class="icon">📞</span>
             <div>
               <strong>Phone</strong>
-              <span>(832) 720-4079</span>
+              <span><a href="tel:+18327204079" style="color:inherit;">(832) 720-4079</a></span>
             </div>
           </div>
           <div class="contact-detail">
@@ -95,10 +98,11 @@
             <span class="icon">🔧</span>
             <div>
               <strong>What We Handle</strong>
-              <span>Vehicle wraps, food truck builds, mobile business builds, fleet branding, and custom concepts</span>
+              <span>Vehicle wraps, food truck builds, mobile business builds, fleet branding, contracting, and custom concepts</span>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -106,8 +110,8 @@
   <footer class="site-footer">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="logo.png" alt="Heavenly Hands Custom Designs" class="logo-img" />
-        <p>Premium vehicle branding and mobile business builds. Crafted with precision since 1992.</p>
+        <img src="logo.png" alt="Heavenly Hands Contracting" class="logo-img" />
+        <p>Building Dreams · Delivering Excellence since 1992.</p>
       </div>
       <div class="footer-col">
         <h4>Navigation</h4>
@@ -122,37 +126,72 @@
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
-        <p>Phone: (832) 720-4079<br />Email: info@heavenlyhandscustomdesigns.com</p>
+        <p>
+          Phone: <a href="tel:+18327204079" style="color:inherit;">(832) 720-4079</a><br />
+          Email: info@heavenlyhandscustomdesigns.com
+        </p>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Heavenly Hands Custom Designs. All rights reserved.</p>
+      <p>© 2025 Heavenly Hands Contracting. All rights reserved.</p>
     </div>
   </footer>
 
+  <a href="quote.html" class="mobile-cta">Get a Free Quote →</a>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
+    // ⚠️ Replace these 3 values after setting up EmailJS
+    const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';
+    const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';
+    const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+
     const form = document.getElementById('contact-form');
     if (form) {
       form.addEventListener('submit', async function(e) {
         e.preventDefault();
-        const response = await fetch(form.action, {
-          method: 'POST', body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-        if (response.ok) {
+        const btn = form.querySelector('button[type="submit"]');
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+
+        try {
+          const formRes = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (!formRes.ok) throw new Error('Formspree failed');
+
+          await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+            to_name:      form.querySelector('[name="name"]').value,
+            to_email:     form.querySelector('[name="email"]').value,
+            service_type: form.querySelector('[name="service"]').value || 'General Inquiry',
+          });
+
           window.location.href = 'https://consulting-stack.github.io/Heavenly-Hands/thank-you.html';
-        } else {
-          alert('Something went wrong. Please try again.');
+
+        } catch (err) {
+          console.error(err);
+          alert('Something went wrong. Please try again or call (832) 720-4079.');
+          btn.textContent = 'Send Message';
+          btn.disabled = false;
         }
       });
     }
+
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.nav-links');
     if (toggle && nav) toggle.addEventListener('click', () => nav.classList.toggle('show'));
+
     const header = document.querySelector('.site-header');
     window.addEventListener('scroll', () => {
-      header.style.background = window.scrollY > 60 ? 'rgba(10,10,10,0.98)' : 'rgba(10,10,10,0.90)';
+      header.style.background = window.scrollY > 60 ? 'rgba(10,10,10,0.98)' : 'rgba(10,10,10,0.92)';
     });
   </script>
+
 </body>
 </html>
