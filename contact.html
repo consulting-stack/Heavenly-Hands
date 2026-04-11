@@ -10,105 +10,28 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
-    #service-map {
-      height: 480px;
-      width: 100%;
-      border-radius: 16px;
-      border: 1px solid rgba(201,168,76,0.25);
-      z-index: 1;
-    }
-
-    .map-section {
-      padding: 90px 0;
-      background:
-        radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.06) 0%, transparent 60%),
-        #0a0a0a;
-    }
-
-    .city-ticker {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: 20px;
-      flex-wrap: wrap;
-    }
-
-    .city-ticker-label {
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    .city-pill {
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 5px 14px;
-      border-radius: 100px;
-      border: 1px solid rgba(201,168,76,0.25);
-      color: var(--gray);
-      letter-spacing: 0.05em;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-
-    .city-pill.active {
-      background: rgba(201,168,76,0.12);
-      border-color: var(--gold);
-      color: var(--gold-light);
-    }
-
-    .leaflet-popup-content-wrapper {
-      background: #161616 !important;
-      border: 1px solid rgba(201,168,76,0.35) !important;
-      border-radius: 10px !important;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important;
-      color: #F8F8F8 !important;
-    }
-
-    .leaflet-popup-tip { background: #161616 !important; }
-    .leaflet-popup-content { margin: 14px 18px !important; }
-
-    .map-popup-title {
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: #C9A84C;
-      margin: 0 0 4px;
-    }
-
-    .map-popup-sub {
-      font-size: 0.78rem;
-      color: #9CA3AF;
-      margin: 0;
-    }
-
-    .leaflet-control-attribution {
-      background: rgba(10,10,10,0.8) !important;
-      color: #555 !important;
-    }
-
-    .leaflet-control-attribution a { color: #777 !important; }
-
-    .leaflet-control-zoom a {
-      background: #161616 !important;
-      color: #C9A84C !important;
-      border-color: rgba(201,168,76,0.25) !important;
-    }
-
-    .leaflet-control-zoom a:hover { background: #222 !important; }
+    #service-map { height:480px; width:100%; border-radius:16px; border:1px solid rgba(201,168,76,0.25); z-index:1; }
+    .map-section { padding:90px 0; background:radial-gradient(ellipse at 20% 50%,rgba(201,168,76,.06) 0%,transparent 60%),#0a0a0a; }
+    .city-ticker { display:flex; align-items:center; gap:12px; margin-top:20px; flex-wrap:wrap; }
+    .city-ticker-label { font-family:'Poppins',sans-serif; font-size:0.72rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); }
+    .city-pill { font-family:'Poppins',sans-serif; font-size:0.75rem; font-weight:600; padding:5px 14px; border-radius:100px; border:1px solid rgba(201,168,76,0.25); color:var(--gray); letter-spacing:0.05em; transition:all 0.3s ease; cursor:pointer; }
+    .city-pill.active { background:rgba(201,168,76,0.12); border-color:var(--gold); color:var(--gold-light); }
+    .leaflet-popup-content-wrapper { background:#161616 !important; border:1px solid rgba(201,168,76,0.35) !important; border-radius:10px !important; box-shadow:0 8px 32px rgba(0,0,0,0.5) !important; color:#F8F8F8 !important; }
+    .leaflet-popup-tip { background:#161616 !important; }
+    .leaflet-popup-content { margin:14px 18px !important; }
+    .map-popup-title { font-family:'Poppins',sans-serif; font-size:0.9rem; font-weight:700; color:#C9A84C; margin:0 0 4px; }
+    .map-popup-sub { font-size:0.78rem; color:#9CA3AF; margin:0; }
+    .leaflet-control-attribution { background:rgba(10,10,10,0.8) !important; color:#555 !important; }
+    .leaflet-control-attribution a { color:#777 !important; }
+    .leaflet-control-zoom a { background:#161616 !important; color:#C9A84C !important; border-color:rgba(201,168,76,0.25) !important; }
+    .leaflet-control-zoom a:hover { background:#222 !important; }
   </style>
 </head>
 <body>
 
   <header class="site-header">
     <nav class="navbar">
-      <a href="index.html">
-        <img src="logo.png" alt="Heavenly Hands Contracting" class="logo-img" />
-      </a>
+      <a href="index.html"><img src="logo.png" alt="Heavenly Hands Contracting" class="logo-img" /></a>
       <button class="menu-toggle" type="button">☰</button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -129,11 +52,9 @@
     </div>
   </div>
 
-  <!-- CONTACT FORM -->
   <section class="bg-dots">
     <div class="container">
       <div class="contact-layout">
-
         <div class="form-card">
           <h2>Send a Message</h2>
           <p>Fill out the form and we'll get back to you with next steps.</p>
@@ -167,58 +88,25 @@
         <div class="contact-card">
           <h2>Contact Information</h2>
           <p>We're ready to help. Reach out directly or use the form.</p>
-          <div class="contact-detail">
-            <span class="icon">📞</span>
-            <div>
-              <strong>Phone</strong>
-              <span>Coming Soon</span>
-            </div>
-          </div>
-          <div class="contact-detail">
-            <span class="icon">✉️</span>
-            <div>
-              <strong>Email</strong>
-              <span>info@heavenlyhandscustomdesigns.com</span>
-            </div>
-          </div>
-          <div class="contact-detail">
-            <span class="icon">🕐</span>
-            <div>
-              <strong>Response Time</strong>
-              <span>We typically respond within 1 business day</span>
-            </div>
-          </div>
-          <div class="contact-detail">
-            <span class="icon">📍</span>
-            <div>
-              <strong>Service Area</strong>
-              <span>Texas & Mississippi — serving major metro and surrounding areas</span>
-            </div>
-          </div>
+          <div class="contact-detail"><span class="icon">📞</span><div><strong>Phone</strong><span>Coming Soon</span></div></div>
+          <div class="contact-detail"><span class="icon">✉️</span><div><strong>Email</strong><span>info@heavenlyhandscustomdesigns.com</span></div></div>
+          <div class="contact-detail"><span class="icon">🕐</span><div><strong>Response Time</strong><span>We typically respond within 1 business day</span></div></div>
+          <div class="contact-detail"><span class="icon">📍</span><div><strong>Service Area</strong><span>Texas & Mississippi — serving major metro and surrounding areas</span></div></div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- SERVICE AREA MAP -->
   <section class="map-section">
     <div class="container">
       <div class="section-label">Service Area</div>
       <h2 class="section-title">Where We Work</h2>
       <p class="section-sub" style="margin-bottom:24px;">We serve businesses across Texas and Mississippi. If you're in or near any of these cities — we've got you covered.</p>
-
-      <div class="city-ticker" id="city-ticker">
-        <span class="city-ticker-label">Now Viewing:</span>
-      </div>
-
-      <div style="margin-top:20px;">
-        <div id="service-map"></div>
-      </div>
+      <div class="city-ticker" id="city-ticker"><span class="city-ticker-label">Now Viewing:</span></div>
+      <div style="margin-top:20px;"><div id="service-map"></div></div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-grid">
       <div class="footer-brand">
@@ -241,77 +129,74 @@
         <p>Email: info@heavenlyhandscustomdesigns.com</p>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 Heavenly Hands Contracting. All rights reserved.</p>
-    </div>
+    <div class="footer-bottom"><p>© 2026 Heavenly Hands Contracting. All rights reserved.</p></div>
   </footer>
 
   <a href="quote.html" class="mobile-cta">Get a Free Quote →</a>
 
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  Tawk_API.onLoad = function() {
+    Tawk_API.customStyle = {
+      visibility: {
+        desktop: { position: 'br', xOffset: 20, yOffset: 20 },
+        mobile:  { position: 'br', xOffset: 10, yOffset: 65 }
+      }
+    };
+  };
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/69d9dc284d80b21c34bff088/1jltg7vc4';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
+
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
-
-    // ── SERVICE AREA CITIES ──
+  window.addEventListener('load', function() {
     const serviceAreas = [
-      { name: 'Houston, TX',        lat: 29.7604, lng: -95.3698, zoom: 11 },
-      { name: 'Dallas, TX',         lat: 32.7767, lng: -96.7970, zoom: 11 },
-      { name: 'San Antonio, TX',    lat: 29.4241, lng: -98.4936, zoom: 11 },
-      { name: 'Austin, TX',         lat: 30.2672, lng: -97.7431, zoom: 11 },
-      { name: 'Fort Worth, TX',     lat: 32.7555, lng: -97.3308, zoom: 11 },
-      { name: 'Beaumont, TX',       lat: 30.0802, lng: -94.1266, zoom: 12 },
-      { name: 'Corpus Christi, TX', lat: 27.8006, lng: -97.3964, zoom: 11 },
-      { name: 'Tyler, TX',          lat: 32.3513, lng: -95.3011, zoom: 12 },
-      { name: 'Port Arthur, TX',    lat: 29.8849, lng: -93.9399, zoom: 12 },
-      { name: 'Nacogdoches, TX',    lat: 31.6035, lng: -94.6552, zoom: 12 },
-      { name: 'Jackson, MS',        lat: 32.2988, lng: -90.1848, zoom: 11 },
-      { name: 'Gulfport, MS',       lat: 30.3674, lng: -89.0928, zoom: 12 },
-      { name: 'Biloxi, MS',         lat: 30.3960, lng: -88.8853, zoom: 12 },
-      { name: 'Hattiesburg, MS',    lat: 31.3271, lng: -89.2903, zoom: 12 },
-      { name: 'Pascagoula, MS',     lat: 30.3457, lng: -88.5562, zoom: 12 },
-      { name: 'Meridian, MS',       lat: 32.3643, lng: -88.7037, zoom: 12 },
+      { name:'Houston, TX',        lat:29.7604, lng:-95.3698, zoom:11 },
+      { name:'Dallas, TX',         lat:32.7767, lng:-96.7970, zoom:11 },
+      { name:'San Antonio, TX',    lat:29.4241, lng:-98.4936, zoom:11 },
+      { name:'Austin, TX',         lat:30.2672, lng:-97.7431, zoom:11 },
+      { name:'Fort Worth, TX',     lat:32.7555, lng:-97.3308, zoom:11 },
+      { name:'Beaumont, TX',       lat:30.0802, lng:-94.1266, zoom:12 },
+      { name:'Corpus Christi, TX', lat:27.8006, lng:-97.3964, zoom:11 },
+      { name:'Tyler, TX',          lat:32.3513, lng:-95.3011, zoom:12 },
+      { name:'Port Arthur, TX',    lat:29.8849, lng:-93.9399, zoom:12 },
+      { name:'Nacogdoches, TX',    lat:31.6035, lng:-94.6552, zoom:12 },
+      { name:'Jackson, MS',        lat:32.2988, lng:-90.1848, zoom:11 },
+      { name:'Gulfport, MS',       lat:30.3674, lng:-89.0928, zoom:12 },
+      { name:'Biloxi, MS',         lat:30.3960, lng:-88.8853, zoom:12 },
+      { name:'Hattiesburg, MS',    lat:31.3271, lng:-89.2903, zoom:12 },
+      { name:'Pascagoula, MS',     lat:30.3457, lng:-88.5562, zoom:12 },
+      { name:'Meridian, MS',       lat:32.3643, lng:-88.7037, zoom:12 },
     ];
 
-    // ── INIT MAP ──
-    const map = L.map('service-map', {
-      center: [31.0, -94.5],
-      zoom: 6,
-      zoomControl: true,
-      scrollWheelZoom: false,
-    });
-
+    const map = L.map('service-map', { center:[31.0,-94.5], zoom:6, zoomControl:true, scrollWheelZoom:false });
     L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-      attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> © <a href="https://carto.com/">CARTO</a>',
-      subdomains: 'abcd',
-      maxZoom: 19
+      attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> © <a href="https://carto.com/">CARTO</a>',
+      subdomains:'abcd', maxZoom:19
     }).addTo(map);
 
-    // Gold marker
     const goldIcon = L.divIcon({
-      className: '',
-      html: `<div style="
-        width:14px;height:14px;
-        background:#C9A84C;
-        border:2px solid #F0C040;
-        border-radius:50%;
-        box-shadow:0 0 10px rgba(201,168,76,0.7);
-      "></div>`,
-      iconSize: [14,14],
-      iconAnchor: [7,7],
-      popupAnchor: [0,-10],
+      className:'',
+      html:`<div style="width:14px;height:14px;background:#C9A84C;border:2px solid #F0C040;border-radius:50%;box-shadow:0 0 10px rgba(201,168,76,0.7);"></div>`,
+      iconSize:[14,14], iconAnchor:[7,7], popupAnchor:[0,-10]
     });
 
-    // Add all markers
     const markers = serviceAreas.map(city => {
-      const marker = L.marker([city.lat, city.lng], { icon: goldIcon }).addTo(map);
-      marker.bindPopup(`
-        <p class="map-popup-title">${city.name}</p>
-        <p class="map-popup-sub">Heavenly Hands serves this area</p>
-      `);
-      return marker;
+      const m = L.marker([city.lat, city.lng], { icon:goldIcon }).addTo(map);
+      m.bindPopup(`<p class="map-popup-title">${city.name}</p><p class="map-popup-sub">Heavenly Hands serves this area</p>`);
+      return m;
     });
 
-    // ── CITY TICKER PILLS ──
     const ticker = document.getElementById('city-ticker');
     serviceAreas.forEach((city, i) => {
       const pill = document.createElement('span');
@@ -321,7 +206,6 @@
       ticker.appendChild(pill);
     });
 
-    // ── FLY TO CITY ──
     let currentIndex = 0;
     let paused = false;
 
@@ -329,53 +213,32 @@
       document.querySelectorAll('.city-pill').forEach(p => p.classList.remove('active'));
       const pill = document.getElementById(`pill-${index}`);
       if (pill) pill.classList.add('active');
-
       const city = serviceAreas[index];
       map.closePopup();
-
-      map.flyTo([city.lat, city.lng], city.zoom, {
-        duration: 1.6,
-        easeLinearity: 0.35
-      });
-
-      setTimeout(() => {
-        if (!paused) markers[index].openPopup();
-      }, 1700);
+      map.flyTo([city.lat, city.lng], city.zoom, { duration:1.6, easeLinearity:0.35 });
+      setTimeout(() => { if (!paused) markers[index].openPopup(); }, 1700);
     }
 
-    // Start on first city after short delay
     setTimeout(() => flyToCity(0), 500);
 
-    // ── ANIMATION LOOP ──
-    // FIX: dragstart instead of mousedown — flyTo was triggering
-    // its own mousedown events and killing the interval after city 1
     setInterval(() => {
       if (paused) return;
       currentIndex = (currentIndex + 1) % serviceAreas.length;
-
       if (currentIndex === 0) {
-        map.flyTo([31.0, -94.5], 6, { duration: 2 });
+        map.flyTo([31.0,-94.5], 6, { duration:2 });
         setTimeout(() => { if (!paused) flyToCity(0); }, 2500);
       } else {
         flyToCity(currentIndex);
       }
     }, 4500);
 
-    // Only pause on intentional user drag
     map.on('dragstart', () => { paused = true; });
 
-    // Click a pill to jump to that city and resume
     document.querySelectorAll('.city-pill').forEach((pill, i) => {
-      pill.addEventListener('click', () => {
-        paused = false;
-        currentIndex = i;
-        flyToCity(i);
-      });
+      pill.addEventListener('click', () => { paused = false; currentIndex = i; flyToCity(i); });
     });
 
-    // ── CONTACT FORM ──
     emailjs.init('ooyUlSfr3d2-5lQBk');
-
     const form = document.getElementById('contact-form');
     if (form) {
       form.addEventListener('submit', async function(e) {
@@ -383,27 +246,17 @@
         const btn = form.querySelector('button[type="submit"]');
         btn.textContent = 'Sending...';
         btn.disabled = true;
-
         try {
-          const formRes = await fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
-          });
-
+          const formRes = await fetch(form.action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} });
           if (!formRes.ok) throw new Error('Formspree failed');
-
           await emailjs.send('service_xn6jpzv', 'template_ypf56ch', {
-            to_name:      form.querySelector('[name="name"]').value,
-            to_email:     form.querySelector('[name="email"]').value,
+            to_name: form.querySelector('[name="name"]').value,
+            to_email: form.querySelector('[name="email"]').value,
             service_type: form.querySelector('[name="service"]').value || 'General Inquiry',
             vehicle_type: 'N/A',
           });
-
           window.location.href = 'https://consulting-stack.github.io/Heavenly-Hands/thank-you.html';
-
-        } catch (err) {
-          console.error(err);
+        } catch(err) {
           alert('Something went wrong. Please try again or email us directly.');
           btn.textContent = 'Send Message';
           btn.disabled = false;
@@ -411,19 +264,14 @@
       });
     }
 
-    // ── NAV ──
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.nav-links');
     if (toggle && nav) toggle.addEventListener('click', () => nav.classList.toggle('show'));
-
     const header = document.querySelector('.site-header');
     window.addEventListener('scroll', () => {
-      header.style.background = window.scrollY > 60
-        ? 'rgba(10,10,10,0.98)'
-        : 'rgba(10,10,10,0.92)';
+      header.style.background = window.scrollY > 60 ? 'rgba(10,10,10,0.98)' : 'rgba(10,10,10,0.92)';
     });
-
+  });
   </script>
-
 </body>
 </html>
