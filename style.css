@@ -966,3 +966,7 @@ section { padding: 90px 0; }
     grid-template-columns: 1fr !important;
   }
 }
+@media (max-width: 768px) {
+  .testimonials-grid { grid-template-columns: 1fr !important; }
+  .thankyou-steps { grid-template-columns: repeat(2,1fr) !important; }
+}
