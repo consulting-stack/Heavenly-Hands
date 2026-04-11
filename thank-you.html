@@ -3,84 +3,146 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Thank You | Heavenly Hands Custom Designs</title>
-
-  <meta
-    name="description"
-    content="Thank you for contacting Heavenly Hands Custom Designs. Your quote request has been received."
-  />
-
+  <title>Thank You | Heavenly Hands Contracting</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <header class="site-header">
     <nav class="navbar">
-      <a href="index.html" class="logo">Heavenly Hands Custom Designs</a>
-
+      <a href="index.html">
+        <img src="logo.png" alt="Heavenly Hands Contracting" class="logo-img" />
+      </a>
       <button class="menu-toggle" type="button">☰</button>
-
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="quote.html">Request a Quote</a></li>
+        <li><a href="quote.html" class="nav-cta">Get a Quote</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="hero-dark">
-    <div class="container text-center">
-      <div class="hero-badge">Thank You</div>
-      <h1>Your Request Has Been Received</h1>
-      <p>
-        Thank you for contacting Heavenly Hands Custom Designs.
-        We’ve received your quote request and will review the details soon.
-      </p>
-    </div>
-  </section>
+  <!-- THANK YOU HERO -->
+  <div class="page-hero" style="text-align: center; padding: 160px 5% 80px;">
+    <div class="page-hero-content" style="max-width: 680px; margin: 0 auto;">
 
-  <section>
-    <div class="container">
-      <div class="cta-box" style="max-width: 800px; margin: 0 auto; text-align: center;">
-        <h2>What Happens Next?</h2>
-        <p>
-          Our team will review your submission and follow up with the next steps,
-          additional questions if needed, or pricing guidance based on your project.
-        </p>
-        <p>
-          We appreciate the opportunity to learn more about your business and how we can help
-          transform your vehicle into a stronger brand asset.
-        </p>
-        <a href="index.html" class="btn">Return to Home</a>
+      <div style="
+        width: 80px; height: 80px;
+        border-radius: 50%;
+        background: rgba(201,168,76,0.12);
+        border: 2px solid var(--gold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 28px;
+        font-size: 2rem;
+      ">✓</div>
+
+      <div class="section-label" style="justify-content: center;">Request Received</div>
+      <h1 style="font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: 20px;">
+        We've Got Your Request,<br /><span style="color: var(--gold-light);">We'll Be in Touch Soon.</span>
+      </h1>
+      <p style="color: var(--gray); font-size: 1.05rem; line-height: 1.8; margin-bottom: 40px;">
+        Thank you for reaching out to Heavenly Hands Contracting. Our team will review your project details and follow up within <strong style="color: var(--white);">1 business day</strong> with pricing and next steps.<br /><br />
+        Check your inbox — a confirmation email is on its way to you now.
+      </p>
+
+      <a href="index.html" class="btn-primary">Back to Home</a>
+    </div>
+  </div>
+
+  <!-- WHAT HAPPENS NEXT -->
+  <section class="bg-dots">
+    <div class="container" style="text-align: center;">
+      <div class="section-label" style="justify-content: center;">What Happens Next</div>
+      <h2 class="section-title">Here's What to Expect</h2>
+      <p class="section-sub" style="margin: 0 auto 56px;">We keep every project moving with a clear, simple process.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+
+        <div class="service-card" style="text-align: center;">
+          <span class="service-icon">📋</span>
+          <h3>We Review</h3>
+          <p>Your request lands with our team and gets reviewed within 1 business day.</p>
+        </div>
+
+        <div class="service-card" style="text-align: center;">
+          <span class="service-icon">💬</span>
+          <h3>We Follow Up</h3>
+          <p>We reach out with pricing, options, and our recommended approach for your project.</p>
+        </div>
+
+        <div class="service-card" style="text-align: center;">
+          <span class="service-icon">✏️</span>
+          <h3>We Design</h3>
+          <p>Once approved, we build your concept and walk you through every detail.</p>
+        </div>
+
+        <div class="service-card" style="text-align: center;">
+          <span class="service-icon">🚛</span>
+          <h3>We Deliver</h3>
+          <p>Professional execution, quality check, and delivery. Done right every time.</p>
+        </div>
+
       </div>
     </div>
   </section>
 
+  <!-- CTA -->
+  <section class="cta-band">
+    <h2>Need to Reach Us Sooner?</h2>
+    <p>Give us a call directly and we'll get you taken care of right away.</p>
+    <a href="tel:+18327204079" class="btn-primary">📞 (832) 720-4079</a>
+  </section>
+
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container">
-      <h3>Heavenly Hands Custom Designs</h3>
-      <p>Since 1992</p>
-      <p>Phone: 000.000.0000</p>
-      <p>Email: info@heavenlyhandscustomdesigns.com</p>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="logo.png" alt="Heavenly Hands Contracting" class="logo-img" />
+        <p>Building Dreams · Delivering Excellence since 1992.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="quote.html">Get a Quote</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>
+          Phone: <a href="tel:+18327204079" style="color:inherit;">(832) 720-4079</a><br />
+          Email: info@heavenlyhandscustomdesigns.com
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Heavenly Hands Contracting. All rights reserved.</p>
     </div>
   </footer>
 
-  <script>
-    const toggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".nav-links");
+  <a href="quote.html" class="mobile-cta">Get a Free Quote →</a>
 
-    if (toggle && nav) {
-      toggle.addEventListener("click", function () {
-        nav.classList.toggle("show");
-      });
-    }
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav-links');
+    if (toggle && nav) toggle.addEventListener('click', () => nav.classList.toggle('show'));
+    const header = document.querySelector('.site-header');
+    window.addEventListener('scroll', () => {
+      header.style.background = window.scrollY > 60 ? 'rgba(10,10,10,0.98)' : 'rgba(10,10,10,0.92)';
+    });
   </script>
+
 </body>
 </html>
