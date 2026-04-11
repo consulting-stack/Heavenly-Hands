@@ -3,105 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Request a Quote | Heavenly Hands Custom Designs</title>
-  <meta name="description" content="Request a quote from Heavenly Hands Custom Designs for wraps, food truck builds, mobile business builds, and fleet branding." />
+  <title>Request a Quote | Heavenly Hands Contracting</title>
+  <meta name="description" content="Request a free quote from Heavenly Hands Contracting for vehicle wraps, food truck builds, mobile business builds, contracting, and fleet branding." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .quote-layout {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 48px;
-      align-items: start;
-    }
-
-    .what-next-card {
-      background: var(--black-card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 36px 30px;
-      position: sticky;
-      top: 100px;
-    }
-
-    .what-next-card h2 {
-      font-size: 1.3rem;
-      margin-bottom: 20px;
-    }
-
-    .next-step {
-      display: flex;
-      gap: 16px;
-      padding: 18px 0;
-      border-bottom: 1px solid rgba(139,92,246,0.1);
-      align-items: flex-start;
-    }
-
-    .next-step:last-of-type { border-bottom: none; }
-
-    .next-step-num {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: rgba(139,92,246,0.15);
-      border: 1px solid var(--purple);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--purple-light);
-      flex-shrink: 0;
-    }
-
-    .next-step-text strong {
-      display: block;
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.88rem;
-      color: var(--white);
-      margin-bottom: 4px;
-    }
-
-    .next-step-text span {
-      font-size: 0.83rem;
-      color: var(--gray);
-      line-height: 1.6;
-    }
-
-    .trust-badges {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 28px;
-      padding-top: 24px;
-      border-top: 1px solid rgba(139,92,246,0.1);
-    }
-
-    .trust-badge {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.83rem;
-      color: var(--gray);
-    }
-
-    .trust-badge span:first-child { font-size: 1.1rem; flex-shrink: 0; }
-
-    @media (max-width: 900px) {
-      .quote-layout { grid-template-columns: 1fr; }
-      .what-next-card { position: static; }
-    }
-  </style>
 </head>
 <body>
 
   <header class="site-header">
     <nav class="navbar">
       <a href="index.html">
-        <img src="logo.png" alt="Heavenly Hands Custom Designs" class="logo-img" />
+        <img src="logo.png" alt="Heavenly Hands Contracting" class="logo-img" />
       </a>
       <button class="menu-toggle" type="button">☰</button>
       <ul class="nav-links">
@@ -115,60 +29,58 @@
     </nav>
   </header>
 
-  <!-- PAGE HERO -->
   <div class="page-hero">
     <div class="page-hero-content">
       <div class="section-label">Request a Quote</div>
-      <h1>Let's Build Something<br />That Gets You Noticed</h1>
+      <h1>Let's Build Something<br /><span style="color:var(--gold-light);">That Gets You Noticed</span></h1>
       <p>Fill out the form and we'll follow up with pricing, recommendations, and next steps tailored to your project.</p>
     </div>
   </div>
 
-  <!-- QUOTE FORM -->
   <section class="bg-dots">
     <div class="container">
       <div class="quote-layout">
 
-        <!-- FORM -->
         <div class="form-card">
           <h2>Project Quote Request</h2>
           <p>The more detail you give us, the faster and more accurate our response.</p>
 
           <form id="quote-form" action="https://formspree.io/f/mkoplagk" method="POST">
-            <input type="hidden" name="_subject" value="New Quote Request - Heavenly Hands" />
+            <input type="hidden" name="_subject" value="New Quote Request — Heavenly Hands Contracting" />
             <input type="hidden" name="_next" value="https://consulting-stack.github.io/Heavenly-Hands/thank-you.html" />
 
             <label>Full Name</label>
-            <input type="text" name="name" placeholder="Your full name" required />
+            <input type="text" name="name" placeholder="Your full name" autocomplete="name" required />
 
             <label>Email Address</label>
-            <input type="email" name="email" placeholder="your@email.com" required />
+            <input type="email" name="email" placeholder="your@email.com" autocomplete="email" required />
 
             <label>Phone Number</label>
-            <input type="tel" name="phone" placeholder="(000) 000-0000" />
+            <input type="tel" name="phone" placeholder="(000) 000-0000" autocomplete="tel" />
 
-            <label>Type of Vehicle</label>
-            <input type="text" name="vehicle" placeholder="Van, Box Truck, Trailer, Food Truck, etc." required />
+            <label>Type of Vehicle or Project</label>
+            <input type="text" name="vehicle" placeholder="Van, Food Truck, Construction Project, etc." required />
 
             <label>Service Needed</label>
             <select name="service" required>
               <option value="">Select a service</option>
-              <option>Wraps & Graphics</option>
+              <option>Vehicle Wraps & Graphics</option>
               <option>Food Truck Design & Builds</option>
               <option>Mobile Business Builds</option>
               <option>Interior Layout Design</option>
               <option>Fleet Branding</option>
+              <option>General Contracting</option>
+              <option>Equipment Operation & Hauling</option>
               <option>Custom Design Concepts</option>
             </select>
 
             <label>Project Details</label>
-            <textarea name="details" rows="6" placeholder="Tell us about your vehicle, what you're looking to achieve, any specific design ideas, timeline, or other details that would help us understand your project..." required></textarea>
+            <textarea name="details" rows="6" placeholder="Describe your project, goals, timeline, and any specific details that would help us understand what you need..." required></textarea>
 
             <button type="submit">Submit Quote Request →</button>
           </form>
         </div>
 
-        <!-- WHAT HAPPENS NEXT -->
         <div class="what-next-card">
           <h2>What Happens Next</h2>
 
@@ -176,7 +88,7 @@
             <div class="next-step-num">1</div>
             <div class="next-step-text">
               <strong>We Review Your Request</strong>
-              <span>Our team looks over your project details and vehicle info within 1 business day.</span>
+              <span>Our team looks over your project details within 1 business day.</span>
             </div>
           </div>
 
@@ -184,7 +96,7 @@
             <div class="next-step-num">2</div>
             <div class="next-step-text">
               <strong>We Follow Up With Pricing</strong>
-              <span>You'll receive a detailed response with pricing, options, and our recommended approach.</span>
+              <span>You'll receive a detailed response with pricing and our recommended approach.</span>
             </div>
           </div>
 
@@ -192,15 +104,15 @@
             <div class="next-step-num">3</div>
             <div class="next-step-text">
               <strong>Design & Approval</strong>
-              <span>Once you're ready to proceed, we build your concept and walk you through every detail.</span>
+              <span>We build the concept and walk you through every detail until it's right.</span>
             </div>
           </div>
 
           <div class="next-step">
             <div class="next-step-num">4</div>
             <div class="next-step-text">
-              <strong>Install & Hit the Road</strong>
-              <span>Professional installation and quality check. Your vehicle leaves ready to represent your brand.</span>
+              <strong>Build & Deliver</strong>
+              <span>Professional execution and quality check before your project is delivered.</span>
             </div>
           </div>
 
@@ -215,11 +127,15 @@
             </div>
             <div class="trust-badge">
               <span>✅</span>
-              <span>500+ vehicles completed</span>
+              <span>500+ projects completed</span>
             </div>
             <div class="trust-badge">
               <span>✅</span>
               <span>Response within 1 business day</span>
+            </div>
+            <div class="trust-badge">
+              <span>✅</span>
+              <span>Design, builds & contracting</span>
             </div>
           </div>
         </div>
@@ -228,12 +144,11 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="logo.png" alt="Heavenly Hands Custom Designs" class="logo-img" />
-        <p>Premium vehicle branding and mobile business builds. Crafted with precision since 1992.</p>
+        <img src="logo.png" alt="Heavenly Hands Contracting" class="logo-img" />
+        <p>Building Dreams · Delivering Excellence since 1992.</p>
       </div>
       <div class="footer-col">
         <h4>Navigation</h4>
@@ -248,15 +163,28 @@
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
-        <p>Phone: (832) 720-4079<br />Email: info@heavenlyhandscustomdesigns.com</p>
+        <p>
+          Phone: <a href="tel:+18327204079" style="color:inherit;">(832) 720-4079</a><br />
+          Email: info@heavenlyhandscustomdesigns.com
+        </p>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Heavenly Hands Custom Designs. All rights reserved.</p>
+      <p>© 2025 Heavenly Hands Contracting. All rights reserved.</p>
     </div>
   </footer>
 
+  <a href="quote.html" class="mobile-cta">Get a Free Quote →</a>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
+    const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';
+    const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';
+    const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+
     const form = document.getElementById('quote-form');
     if (form) {
       form.addEventListener('submit', async function(e) {
@@ -264,15 +192,28 @@
         const btn = form.querySelector('button[type="submit"]');
         btn.textContent = 'Sending...';
         btn.disabled = true;
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-        if (response.ok) {
+
+        try {
+          const formRes = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (!formRes.ok) throw new Error('Formspree failed');
+
+          await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+            to_name:      form.querySelector('[name="name"]').value,
+            to_email:     form.querySelector('[name="email"]').value,
+            service_type: form.querySelector('[name="service"]').value || 'Quote Request',
+            vehicle_type: form.querySelector('[name="vehicle"]').value || 'Not specified',
+          });
+
           window.location.href = 'https://consulting-stack.github.io/Heavenly-Hands/thank-you.html';
-        } else {
-          alert('Something went wrong. Please try again.');
+
+        } catch (err) {
+          console.error(err);
+          alert('Something went wrong. Please try again or call (832) 720-4079.');
           btn.textContent = 'Submit Quote Request →';
           btn.disabled = false;
         }
@@ -285,12 +226,9 @@
 
     const header = document.querySelector('.site-header');
     window.addEventListener('scroll', () => {
-      header.style.background = window.scrollY > 60 ? 'rgba(10,10,10,0.98)' : 'rgba(10,10,10,0.90)';
+      header.style.background = window.scrollY > 60 ? 'rgba(10,10,10,0.98)' : 'rgba(10,10,10,0.92)';
     });
   </script>
-
-</body>
-</html>
 
 </body>
 </html>
